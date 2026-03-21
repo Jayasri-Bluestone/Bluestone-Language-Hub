@@ -26,12 +26,17 @@ const ContactModal = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('http://localhost:5006/api/contact', {
+      const response = await fetch('https://bluestoneinternationalpreschool.com/bgoi_portal/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          domain: 'Language Hub',
+          category: 'Website Enquiry',
+          interested_in: formData.program
+        }),
       });
 
       const data = await response.json();
@@ -75,7 +80,7 @@ const ContactModal = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-4xl bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+            className="relative w-full max-w-4xl bg-white rounded-3xl md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
           >
             {/* Left side - Brand Info */}
             <div className="w-full md:w-1/3 bg-gray-900 p-8 text-white hidden md:flex flex-col justify-between">
