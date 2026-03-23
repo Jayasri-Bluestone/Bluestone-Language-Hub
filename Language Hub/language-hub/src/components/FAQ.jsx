@@ -6,14 +6,14 @@ const FAQItem = ({ question, answer, i }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.1 }}
       className={`mb-6 rounded-[32px] overflow-hidden border transition-all duration-500 ${isOpen ? 'border-brand-green bg-white shadow-2xl shadow-brand-green/5' : 'border-brand-green/10 bg-brand-green-soft/50 hover:bg-white hover:border-brand-green/20'}`}
     >
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-10 py-8 flex items-center justify-between text-left"
       >
@@ -22,7 +22,7 @@ const FAQItem = ({ question, answer, i }) => {
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
         </div>
       </button>
-      
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -54,14 +54,14 @@ const FAQ = () => {
     <section id="faq" className="py-32 bg-white px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-10">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block text-xs"
           >
             Quick Answers
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter mb-16"
@@ -75,20 +75,20 @@ const FAQ = () => {
             <FAQItem key={i} {...faq} i={i} />
           ))}
         </div>
-        
-        <motion.div 
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           className="mt-20 p-12 rounded-[48px] bg-brand-green text-white text-center shadow-2xl shadow-brand-green/20 relative overflow-hidden"
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-20 p-12 rounded-[48px] bg-brand-green text-white text-center shadow-2xl shadow-brand-green/20 relative overflow-hidden"
         >
-           <div className="absolute top-0 right-0 p-12 opacity-10">
-              <HelpCircle className="w-64 h-64" />
-           </div>
-           <h4 className="text-3xl font-black mb-6 relative z-10">Still have questions?</h4>
-           <p className="text-lg opacity-80 mb-10 relative z-10 font-bold max-w-xl mx-auto">Our linguistic consultants are here to help you draft your roadmap to success.</p>
-           <button className="px-12 py-5 bg-white text-brand-green rounded-2xl text-lg font-black hover:bg-white hover:scale-105 transition-all shadow-xl active:scale-95 relative z-10">
-              Chat with an Expert
-           </button>
+          <div className="absolute top-0 right-0 p-12 opacity-10">
+            <HelpCircle className="w-64 h-64" />
+          </div>
+          <h4 className="text-3xl font-black mb-6 relative z-10">Still have questions?</h4>
+          <p className="text-lg opacity-80 mb-10 relative z-10 font-bold max-w-xl mx-auto">Our linguistic consultants are here to help you draft your roadmap to success.</p>
+          <button className="px-12 py-5 bg-white text-brand-green rounded-2xl text-lg font-black hover:bg-white hover:scale-105 transition-all shadow-xl active:scale-95 relative z-10">
+            Chat with an Expert
+          </button>
         </motion.div>
       </div>
     </section>

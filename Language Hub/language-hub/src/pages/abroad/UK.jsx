@@ -70,9 +70,9 @@ const UK = () => {
                    <div className="p-12">
                       <h3 className="text-3xl font-black mb-4 text-gray-900 leading-tight">{item.title}</h3>
                       <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
-                      <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
+                      {/* <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
                          View Requirements <ArrowRight className="w-4 h-4" />
-                      </div>
+                      </div> */}
                    </div>
                 </motion.div>
               ))}

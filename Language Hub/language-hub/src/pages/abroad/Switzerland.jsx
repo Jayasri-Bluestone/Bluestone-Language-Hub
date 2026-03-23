@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Globe, ShieldCheck, Target, ArrowRight, BookOpen } from 'lucide-react';
 import SEO from '../../components/SEO';
 import { useContactModal } from '../../context/ModalContext';
+import Switzer from '../../assets/swit.png';
 
 const Switzerland = () => {
   const { openContactModal } = useContactModal();
@@ -13,7 +14,7 @@ const Switzerland = () => {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1530122622335-36423407e735?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover brightness-50" alt="Switzerland" />
+          <img src={Switzer} className="w-full h-full object-cover brightness-50" alt="Switzerland" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-green/40" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center text-white p-6 text-balance">
