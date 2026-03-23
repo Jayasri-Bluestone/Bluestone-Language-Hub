@@ -3,33 +3,38 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, MapPin, ArrowRight, Star, Globe, Languages } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useContactModal } from '../context/ModalContext';
+import Singapore from '../assets/singapore.png';
+import Ireland from '../assets/ireland.png';
+import Netherlands from '../assets/nether.png';
+import Switzerland from '../assets/swit.png';
+import Bulgaria from '../assets/bularia.png';
 
 const Abroad = () => {
     const { openContactModal } = useContactModal();
     const [hoveredIndex, setHoveredIndex] = useState(0);
 
-    const destinations = [
-        { name: 'USA', img: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=800', link: '/abroad/usa', icon: Globe },
-        { name: 'UK', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800', link: '/abroad/uk', icon: MapPin },
-        { name: 'Canada', img: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800', link: '/abroad/canada', icon: Globe },
-        { name: 'Australia', img: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800', link: '/abroad/australia', icon: MapPin },
-        { name: 'New Zealand', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800', link: '/abroad/new-zealand', icon: Globe },
-        { name: 'Ireland', img: 'https://images.unsplash.com/photo-1590089415225-403ed3fb5bca?auto=format&fit=crop&q=80&w=800', link: '/abroad/ireland', icon: MapPin },
-        { name: 'Germany', img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800', link: '/abroad/germany', icon: Globe },
-        { name: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800', link: '/abroad/france', icon: MapPin },
-        { name: 'Singapore', img: 'https://images.unsplash.com/photo-1559599141-860824e8678d?auto=format&fit=crop&q=80&w=800', link: '/abroad/singapore', icon: Globe },
-        { name: 'Italy', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=800', link: '/abroad/italy', icon: MapPin },
-        { name: 'Malaysia', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=800', link: '/abroad/malaysia', icon: Globe },
-        { name: 'Sweden', img: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=800', link: '/abroad/sweden', icon: MapPin },
-        { name: 'Netherlands', img: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&q=80&w=800', link: '/abroad/netherlands', icon: Globe },
-        { name: 'Denmark', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=800', link: '/abroad/denmark', icon: MapPin },
-        { name: 'Bulgaria', img: 'https://images.unsplash.com/photo-1561532325-7d5231a2dede?auto=format&fit=crop&q=80&w=800', link: '/abroad/bulgaria', icon: Globe },
-        { name: 'Russia', img: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&q=80&w=800', link: '/abroad/russia', icon: MapPin },
-        { name: 'Switzerland', img: 'https://images.unsplash.com/photo-1530122622335-36423407e735?auto=format&fit=crop&q=80&w=800', link: '/abroad/switzerland', icon: Globe },
-        { name: 'South Korea', img: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&q=80&w=800', link: '/abroad/south-korea', icon: MapPin },
-        { name: 'UAE', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800', link: '/abroad/uae', icon: Globe },
-        { name: 'Philippines', img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=800', link: '/abroad/philippines', icon: MapPin }
-    ];
+  const destinations = [
+    { name: 'USA', img: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=800', link: '/abroad/usa', icon: Globe },
+    { name: 'UK', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800', link: '/abroad/uk', icon: MapPin },
+    { name: 'Canada', img: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800', link: '/abroad/canada', icon: Globe },
+    { name: 'Australia', img: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800', link: '/abroad/australia', icon: MapPin },
+    { name: 'New Zealand', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800', link: '/abroad/new-zealand', icon: Globe },
+    { name: 'Ireland', img: 'https://images.unsplash.com/photo-1590089415225-403ed3fb5bca?auto=format&fit=crop&q=80&w=800', link: '/abroad/ireland', icon: MapPin },
+    { name: 'Germany', img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800', link: '/abroad/germany', icon: Globe },
+    { name: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800', link: '/abroad/france', icon: MapPin },
+    { name: 'Singapore', img: 'https://images.unsplash.com/photo-1559599141-860824e8678d?auto=format&fit=crop&q=80&w=800', link: '/abroad/singapore', icon: Globe },
+    { name: 'Italy', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=800', link: '/abroad/italy', icon: MapPin },
+    { name: 'Malaysia', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=800', link: '/abroad/malaysia', icon: Globe },
+    { name: 'Sweden', img: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=800', link: '/abroad/sweden', icon: MapPin },
+    { name: 'Netherlands', img: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&q=80&w=800', link: '/abroad/netherlands', icon: Globe },
+    { name: 'Denmark', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=800', link: '/abroad/denmark', icon: MapPin },
+    { name: 'Bulgaria', img: 'https://images.unsplash.com/photo-1561532325-7d5231a2dede?auto=format&fit=crop&q=80&w=800', link: '/abroad/bulgaria', icon: Globe },
+    { name: 'Russia', img: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&q=80&w=800', link: '/abroad/russia', icon: MapPin },
+    { name: 'Switzerland', img: 'https://images.unsplash.com/photo-1530122622335-36423407e735?auto=format&fit=crop&q=80&w=800', link: '/abroad/switzerland', icon: Globe },
+    { name: 'South Korea', img: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&q=80&w=800', link: '/abroad/south-korea', icon: MapPin },
+    { name: 'UAE', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800', link: '/abroad/uae', icon: Globe },
+    { name: 'Philippines', img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=800', link: '/abroad/philippines', icon: MapPin }
+  ];
 
     return (
         <section id="aboard" className="py-20 md:py-32 bg-white px-6 overflow-hidden relative">
@@ -96,57 +101,57 @@ const Abroad = () => {
                                         <dest.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:text-brand-green transition-colors" />
                                     </div>
 
-                                    {/* Content Panel */}
-                                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end min-h-[50%] z-20">
-                                        <AnimatePresence mode="wait">
-                                            {(typeof window !== 'undefined' && window.innerWidth < 768) || hoveredIndex === i ? (
-                                                <motion.div
-                                                    key="expanded"
-                                                    initial={{ opacity: 0, y: 20 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: 10 }}
-                                                    transition={{ duration: 0.4, delay: 0.2 }}
-                                                    className="max-w-md"
-                                                >
-                                                    <h3 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4 tracking-tight uppercase leading-none">{dest.name}</h3>
-                                                    <p className="text-sm md:text-xl text-gray-200 font-medium leading-relaxed mb-6 md:mb-8 opacity-90 line-clamp-2 md:line-clamp-none">
-                                                        Explore world-class educational opportunities and cultural experiences in {dest.name}.
-                                                    </p>
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            e.stopPropagation();
-                                                            openContactModal();
-                                                        }}
-                                                        className="px-6 py-2 md:px-8 md:py-3 bg-white text-gray-900 rounded-full font-bold flex items-center gap-2 hover:bg-brand-green hover:text-white transition-all group/btn shadow-xl text-xs md:text-base"
-                                                    >
-                                                        Explore Now
-                                                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                                    </button>
-                                                </motion.div>
-                                            ) : (
-                                                <motion.div
-                                                    key="collapsed"
-                                                    initial={{ opacity: 0 }}
-                                                    animate={{ opacity: 1 }}
-                                                    exit={{ opacity: 0 }}
-                                                    className="rotate-[-90deg] origin-bottom-left whitespace-nowrap absolute bottom-12 left-1/2 md:left-20 -translate-x-1/2 md:translate-x-0"
-                                                >
-                                                    <span className="text-xl md:text-2xl font-black text-white tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">
-                                                        {dest.name}
-                                                    </span>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                    </div>
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+                  {/* Content Panel */}
+                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end min-h-[50%] z-20">
+                    <AnimatePresence mode="wait">
+                      {hoveredIndex === i ? (
+                        <motion.div
+                          key="expanded"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.4, delay: 0.2 }}
+                          className="max-w-md"
+                        >
+                          <h3 className="text-4xl font-black text-white mb-4 tracking-tight uppercase leading-none">{dest.name}</h3>
+                          <p className="text-gray-200 font-medium leading-relaxed mb-8 opacity-90">
+                            Explore world-class educational opportunities and cultural experiences in {dest.name}.
+                          </p>
+                          <button 
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              openContactModal();
+                            }}
+                            className="px-8 py-3 bg-white text-gray-900 rounded-full font-bold flex items-center gap-2 hover:bg-brand-green hover:text-white transition-all group/btn shadow-xl"
+                          >
+                            Explore Now
+                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                          </button>
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="collapsed"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="md:rotate-[-90deg] origin-bottom-left whitespace-nowrap absolute bottom-12 left-1/2 md:left-20 -translate-x-1/2 md:translate-x-0"
+                        >
+                          <span className="text-2xl font-black text-white tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">
+                            {dest.name}
+                          </span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Abroad;

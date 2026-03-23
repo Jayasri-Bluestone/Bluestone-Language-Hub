@@ -22,34 +22,34 @@ const HorizontalScroll = () => {
         { title: 'Support', text: 'Full visa, admission, and linguistic guidance for every student.', image: supportImg },
     ];
 
-    return (
-        <section
-            ref={targetRef}
-            className="relative h-auto md:h-[500vh] bg-white py-20 md:py-0"
-            style={{ isolation: 'isolate' }}
+  return (
+    <section 
+      ref={targetRef} 
+      className="relative h-[500vh] bg-white" 
+      style={{ isolation: 'isolate' }}
+    >
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden z-10">
+        <motion.div 
+          style={{ x }} 
+          className="flex gap-[1vw] px-[10vw] relative z-20 w-max"
         >
-            <div className="md:sticky md:top-0 md:h-screen flex flex-col md:flex-row items-center overflow-hidden z-10">
-                <motion.div
-                    style={typeof window !== 'undefined' && window.innerWidth >= 768 ? { x } : {}}
-                    className="flex flex-col md:flex-row gap-12 md:gap-[1vw] px-6 md:px-[10vw] relative z-20 w-full md:w-max"
-                >
-                    {/* Main Reveal Text */}
-                    <div className="flex-shrink-0 w-full md:w-[100vw] h-full flex flex-col justify-center md:pl-20 text-center md:text-left">
-                        <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block text-xs"
-                        >
-                            Our Core DNA
-                        </motion.span>
-                        <h2 className="text-5xl sm:text-7xl md:text-[140px] lg:text-[220px] font-black text-gray-900 leading-[0.85] md:leading-[0.8] tracking-tighter">
-                            WE SHAPE <br />
-                            <span className="text-gradient">FUTURES.</span>
-                        </h2>
-                        <p className="mt-8 md:mt-16 text-xl md:text-3xl text-gray-400 max-w-2xl font-bold leading-relaxed mx-auto md:mx-0">
-                            Scroll to explore the pillars of Bluestone Language Hub. We don't just teach languages; <span className="text-gray-900 italic underline decoration-brand-green/30 underline-offset-8">we bridge worlds.</span>
-                        </p>
-                    </div>
+          {/* Main Reveal Text */}
+          <div className="flex-shrink-0 w-full md:w-[100vw] h-full flex flex-col justify-center pl-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block text-xs"
+            >
+              Our Core DNA
+            </motion.span>
+            <h2 className="text-[140px] md:text-[220px] font-black text-gray-900 leading-[0.8] tracking-tighter">
+              WE SHAPE <br />
+              <span className="text-gradient">FUTURES.</span>
+            </h2>
+            <p className="mt-16 text-3xl text-gray-400 max-w-2xl font-bold leading-relaxed">
+              Scroll to explore the pillars of Bluestone Language Hub. We don't just teach languages; <span className="text-gray-900 italic underline decoration-brand-green/30 underline-offset-8">we bridge worlds.</span>
+            </p>
+          </div>
 
                     {/* Feature Cards */}
                     {items.map((item, i) => (

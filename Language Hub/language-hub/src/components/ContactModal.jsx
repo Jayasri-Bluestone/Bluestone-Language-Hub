@@ -67,7 +67,7 @@ const ContactModal = () => {
   return (
     <AnimatePresence>
       {isContactModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] mt-10 flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -80,7 +80,7 @@ const ContactModal = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-4xl bg-white rounded-3xl md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+            className="relative w-full max-w-4xl bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
           >
             {/* Left side - Brand Info */}
             <div className="w-full md:w-1/3 bg-gray-900 p-8 text-white hidden md:flex flex-col justify-between">
@@ -108,15 +108,20 @@ const ContactModal = () => {
             </div>
 
             {/* Right side - Form */}
-            <div className="flex-1 p-8 md:p-12 overflow-y-auto">
+            <div className="flex-1 p-6 md:p-12 overflow-y-auto custom-scrollbar relative">
               <button 
                 onClick={closeContactModal}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-20"
+                className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-20"
               >
                 <X className="w-5 h-5 text-gray-900" />
               </button>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="md:hidden mb-8">
+                <h2 className="text-2xl font-black text-gray-900 tracking-tight">Start Your <span className="text-brand-green">Journey</span></h2>
+                <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Get in touch with our experts</p>
+              </div>
+
+              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-1">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Full Name</label>
                   <input 
@@ -125,7 +130,7 @@ const ContactModal = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900" 
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-500" 
                     placeholder="John Doe" 
                   />
                 </div>
@@ -139,7 +144,7 @@ const ContactModal = () => {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900" 
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900" 
                       placeholder="+91" 
                     />
                   </div>
@@ -151,7 +156,7 @@ const ContactModal = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900" 
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900" 
                       placeholder="john@example.com" 
                     />
                   </div>
@@ -163,7 +168,7 @@ const ContactModal = () => {
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 appearance-none"
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 appearance-none"
                   >
                      <option disabled>Select a Program</option>
                      <option>IELTS Coaching</option>
@@ -184,7 +189,7 @@ const ContactModal = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 resize-none" 
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 resize-none" 
                     placeholder="Tell us about your goals..." 
                   />
                 </div>
@@ -197,7 +202,7 @@ const ContactModal = () => {
 
                 <button 
                   disabled={isSubmitting}
-                  className="w-full py-5 bg-brand-green text-white rounded-2xl text-lg font-black hover:bg-brand-green-light transition-all shadow-xl shadow-brand-green/20 active:scale-[0.98] flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-3 bg-brand-green text-white rounded-2xl text-lg font-black hover:bg-brand-green-light transition-all shadow-xl shadow-brand-green/20 active:scale-[0.98] flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Inquiry'}
                   {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}

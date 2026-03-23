@@ -45,40 +45,40 @@ const Canada = () => {
                 </div>
             </section>
 
-            {/* Benefits Grid */}
-            <section className="py-20 md:py-32 px-6">
-                <div className="container mx-auto">
-                    <div className="text-center mb-16 md:mb-24">
-                        <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-gray-900">Why Canada?</h2>
-                        <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Discover the unique advantages of studying in one of the world's most welcoming nations.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {[
-                            { title: 'Post-Study Work Permit', desc: 'Gain valuable Canadian work experience after your graduation for up to 3 years.', img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600' },
-                            { title: 'Affordable Education', desc: 'Competitive tuition fees and diverse scholarship options compared to other Western countries.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600' },
-                            { title: 'Path to Residency', desc: 'Study and work experience can lead to Permanent Residency (PR) through various programs.', img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600' }
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                whileHover={{ y: -20 }}
-                                className="rounded-3xl md:rounded-[60px] overflow-hidden bg-gray-50 border border-gray-100 group shadow-xl"
-                            >
-                                <div className="h-72 overflow-hidden">
-                                    <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                                </div>
-                                <div className="p-8 md:p-12">
-                                    <h3 className="text-3xl font-black mb-4 text-gray-900 leading-tight">{item.title}</h3>
-                                    <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
-                                    <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
-                                        View Requirements <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+      {/* Benefits Grid */}
+      <section className="py-32 px-6">
+        <div className="container mx-auto">
+           <div className="text-center mb-24">
+              <h2 className="text-6xl font-black mb-8 tracking-tighter text-gray-900">Why Canada?</h2>
+              <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Discover the unique advantages of studying in one of the world's most welcoming nations.</p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {[
+                { title: 'Post-Study Work Permit', desc: 'Gain valuable Canadian work experience after your graduation for up to 3 years.', img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600' },
+                { title: 'Affordable Education', desc: 'Competitive tuition fees and diverse scholarship options compared to other Western countries.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600' },
+                { title: 'Path to Residency', desc: 'Study and work experience can lead to Permanent Residency (PR) through various programs.', img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600' }
+              ].map((item, i) => (
+                <motion.div 
+                  key={i}
+                  whileHover={{ y: -20 }}
+                  className="rounded-[60px] overflow-hidden bg-gray-50 border border-gray-100 group shadow-xl"
+                >
+                   <div className="h-72 overflow-hidden">
+                      <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
+                   </div>
+                   <div className="p-12">
+                      <h3 className="text-3xl font-black mb-4 text-gray-900 leading-tight">{item.title}</h3>
+                      <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
+                      <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
+                         View Requirements <ArrowRight className="w-4 h-4" />
+                      </div>
+                   </div>
+                </motion.div>
+              ))}
+           </div>
+        </div>
+      </section>
 
             {/* Services */}
             <section className="py-32 px-6 bg-gray-900 text-white overflow-hidden relative">
