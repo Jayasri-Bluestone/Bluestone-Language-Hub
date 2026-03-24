@@ -64,9 +64,9 @@ const FAQ = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter mb-16"
+            className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter mb-16 uppercase"
           >
-            Frequently Asked <span className="text-gradient">Questions.</span>
+            Frequently Asked <span className="text-gradient uppercase">Questions.</span>
           </motion.h2>
         </div>
 
@@ -84,7 +84,7 @@ const FAQ = () => {
           <div className="absolute top-0 right-0 p-12 opacity-10">
             <HelpCircle className="w-64 h-64" />
           </div>
-          <h4 className="text-3xl font-black mb-6 relative z-10">Still have questions?</h4>
+          <h4 className="text-2xl font-black mb-6 relative z-10 uppercase">Still have questions?</h4>
           <p className="text-lg opacity-80 mb-10 relative z-10 font-bold max-w-xl mx-auto">Our linguistic consultants are here to help you draft your roadmap to success.</p>
           <button className="px-12 py-5 bg-white text-brand-green rounded-2xl text-lg font-black hover:bg-white hover:scale-105 transition-all shadow-xl active:scale-95 relative z-10">
             Chat with an Expert

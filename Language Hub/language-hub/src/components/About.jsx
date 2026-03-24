@@ -32,8 +32,8 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block text-xs">Our Legacy</span>
-                        <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 mb-10 leading-[0.9] tracking-tighter">
-                            About <br /> <span className="text-gradient">Bluestone.</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 uppercase tracking-tighter">
+                            About <br /> <span className="text-gradient uppercase">Bluestone.</span>
                         </h2>
                         <p className="text-xl text-gray-400 mb-12 leading-relaxed font-semibold italic">
                             "We don't just teach languages; we prepare you for the world stage."
@@ -51,7 +51,7 @@ const About = () => {
                                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-brand-green/5 group-hover:bg-brand-green">
                                         <item.icon className="text-brand-green w-6 h-6 group-hover:text-white" />
                                     </div>
-                                    <h4 className="text-xl font-black text-gray-900 mb-3">{item.title}</h4>
+                                    <h4 className="text-2xl font-black text-gray-900 mb-3 uppercase">{item.title}</h4>
                                     <p className="text-sm text-gray-400 font-bold leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}

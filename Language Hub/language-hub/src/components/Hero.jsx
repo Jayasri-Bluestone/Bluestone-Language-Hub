@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBg from '../assets/hero-bg-v4.png';
+import heroBg from '../assets/image.png';
 import { motion } from 'framer-motion';
 import { Languages, GraduationCap, Trophy, Target, Globe, ArrowRight } from 'lucide-react';
 
@@ -32,7 +32,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20">
       {/* Dynamic Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} className="w-full h-full object-fit" alt="" />
+        <img src={heroBg} className="w-full h-full object-cover" alt="" />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent lg:bg-gradient-to-r lg:from-white lg:via-white/60 lg:to-transparent" />
       </div>
 
@@ -46,7 +46,7 @@ const Hero = () => {
       <FloatingIcon icon={Trophy} delay={3} x="left-[15%]" y="bottom-[20%]" />
       <FloatingIcon icon={Target} delay={4.5} x="right-[10%]" y="bottom-[25%]" />
 
-      <div className="container mx-auto px-6 relative z-10 text-center lg:text-left">
+      <div className="w-7xl mx-auto px-6 relative z-10 text-center lg:text-left">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -60,7 +60,7 @@ const Hero = () => {
             ELEVATE YOUR LINGUISTIC JOURNEY
           </motion.span>
 
-          <h1 className="text-5xl sm:text-7xl md:text-[120px] font-black mb-12 leading-[0.85] tracking-tighter text-gray-900">
+          <h1 className="text-5xl md:text-5xl font-black mb-12 tracking-tighter text-gray-900 uppercase">
             <motion.span
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="max-w-xl text-xl md:text-2xl text-gray-700 mb-16 leading-relaxed font-semibold italic"
+            className="max-w-xl text-xl md:text-xl text-gray-700 mb-16 leading-relaxed font-semibold italic"
           >
             "Beyond language, we build global futures." <br />Step into the world's most elite IELTS, PTE, and OET coaching hub.
           </motion.p>
@@ -124,7 +124,7 @@ const Hero = () => {
             { label: 'Countries', value: '15+', icon: Target },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center relative z-10">
-              <span className="text-4xl md:text-5xl font-black text-brand-green mb-2">{stat.value}</span>
+              <span className="text-4xl md:text-3xl font-black text-brand-green mb-2">{stat.value}</span>
               <span className="text-[10px] md:text-xs font-black text-gray-400 uppercase tracking-widest text-center">{stat.label}</span>
             </div>
           ))}

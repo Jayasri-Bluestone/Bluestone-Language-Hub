@@ -36,7 +36,7 @@ const Japanese = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-9xl font-black leading-tight tracking-tighter mb-8"
+            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
           >
             JAPANESE <br /> <span className="text-brand-green">TRAINING.</span>
           </motion.h1>
@@ -61,7 +61,7 @@ const Japanese = () => {
                  </div>
               </div>
               <div className="order-1 lg:order-2">
-                 <h2 className="text-5xl font-black mb-10 leading-tight tracking-tighter text-gray-900">Your Gateway to a Career in Japan</h2>
+                 <h2 className="text-4xl md:text-5xl font-black mb-10 leading-tight tracking-tighter text-gray-900 uppercase">Your Gateway to a Career in Japan</h2>
                  <p className="text-xl text-gray-500 mb-12 leading-relaxed font-bold">
                     With Japan's increasing demand for skilled technical and healthcare professionals, Japanese language proficiency is a powerful asset. Our course is specifically designed for the JLPT exam and cultural adaptation.
                  </p>
@@ -73,7 +73,7 @@ const Japanese = () => {
                       { title: 'Visa Assistance', desc: 'End-to-end help with specified skilled worker (SSW) visas.' }
                     ].map((item, i) => (
                       <div key={i} className="p-8 rounded-[40px] bg-gray-50 border border-gray-100 hover:border-brand-green/30 transition-colors">
-                         <h4 className="text-2xl font-black mb-2 text-gray-900">{item.title}</h4>
+                         <h4 className="text-2xl font-black mb-2 text-gray-900 uppercase">{item.title}</h4>
                          <p className="text-gray-500 font-bold">{item.desc}</p>
                       </div>
                     ))}
@@ -86,7 +86,7 @@ const Japanese = () => {
       {/* CTA */}
       <section className="py-32 px-6 bg-brand-green text-white">
         <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-6xl font-black mb-12 tracking-tighter">Start your Japanese <br /><span className="opacity-60 underline">Odyssey today.</span></h2>
+           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase">Start your Japanese <br /><span className="opacity-60 underline">Odyssey today.</span></h2>
            <button 
              onClick={openContactModal}
              className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto"

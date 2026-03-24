@@ -30,7 +30,7 @@ const IELTS = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl sm:text-7xl md:text-[160px] font-black text-gray-900 leading-[0.85] md:leading-[0.8] tracking-tighter mb-12"
+                        className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.85] md:leading-[0.8] tracking-tighter mb-12 uppercase"
                     >
                         IELTS <br /> <span className="text-gradient">MASTERY.</span>
                     </motion.h1>
@@ -50,7 +50,7 @@ const IELTS = () => {
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
                         <div className="lg:col-span-8">
-                            <h2 className="text-5xl font-black text-gray-900 mb-12 tracking-tight">Comprehensive Training</h2>
+                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight uppercase">Comprehensive Training</h2>
                             <p className="text-xl text-gray-500 mb-12 leading-relaxed font-medium">
                                 Our IELTS program is designed to take you from your current level to your target band score in the shortest time possible. We cover all four modules—Listening, Reading, Writing, and Speaking—with a focus on the specific strategies needed for each.
                             </p>
@@ -66,7 +66,7 @@ const IELTS = () => {
                                         <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-green transition-colors">
                                             <item.icon className="text-brand-green w-7 h-7 group-hover:text-white transition-colors" />
                                         </div>
-                                        <h4 className="text-2xl font-black text-gray-900 mb-4">{item.title}</h4>
+                                        <h4 className="text-2xl font-black text-gray-900 mb-4 uppercase">{item.title}</h4>
                                         <p className="text-gray-400 font-bold leading-relaxed">{item.desc}</p>
                                     </div>
                                 ))}
@@ -75,7 +75,7 @@ const IELTS = () => {
 
                         <div className="lg:col-span-4">
                             <div className="sticky top-32 p-8 md:p-12 rounded-3xl md:rounded-[56px] bg-brand-green text-white shadow-2xl shadow-brand-green/20">
-                                <h3 className="text-3xl font-black mb-8">Course Info</h3>
+                                <h3 className="text-3xl font-black mb-8 uppercase">Course Info</h3>
                                 <ul className="space-y-6 mb-12">
                                     {[
                                         '8 Weeks Duration',

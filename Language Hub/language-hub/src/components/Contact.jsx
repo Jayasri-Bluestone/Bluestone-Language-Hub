@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, RotateCcw } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -12,9 +12,30 @@ const Contact = () => {
   });
   const [status, setStatus] = React.useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [captchaCode, setCaptchaCode] = React.useState('');
+  const [captchaInput, setCaptchaInput] = React.useState('');
+
+  const generateCaptcha = () => {
+    const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; // Removed confusing similar chars like 0, O, 1, I
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setCaptchaCode(result);
+  };
+
+  React.useEffect(() => {
+    generateCaptcha();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (captchaInput !== captchaCode) {
+      setStatus({ type: 'error', message: 'Invalid verification code. Please try again.' });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
@@ -43,8 +64,11 @@ const Contact = () => {
           program: 'Select a Program',
           message: ''
         });
+        setCaptchaInput('');
+        generateCaptcha();
       } else {
         setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+        generateCaptcha();
       }
     } catch (error) {
       setStatus({ type: 'error', message: 'Failed to connect to the server.' });
@@ -72,14 +96,16 @@ const Contact = () => {
               <MessageSquare className="w-4 h-4 text-brand-green fill-brand-green/20" />
               <span className="text-xs font-black text-brand-green uppercase tracking-widest">Get in Touch</span>
             </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 mb-8 tracking-tighter"
-            >
-              Start Your <span className="text-brand-green">Journey.</span>
-            </motion.h2>
+            <div className="mb-8 md:mb-10">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase"
+                >
+                  Let's Bridge <br /> <span className="text-gradient">Your Future.</span>
+                </motion.h2>
+              </div>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-semibold leading-relaxed">
               Have questions about our programs or want to book a free counseling session? We're here to help you reach your global goals.
             </p>
@@ -99,16 +125,16 @@ const Contact = () => {
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-black mb-10 tracking-tight">Contact Information</h3>
+                  <h3 className="text-3xl font-black mb-10 tracking-tight uppercase">Contact Information</h3>
                   <div className="space-y-6">
                     <div className="flex gap-6 items-start">
                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                         <Mail className="text-brand-green w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Email Us</h4>
+                        <h4 className="text-2xl font-black text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Email Us</h4>
                         <p className="text-lg font-bold">
-                          <a href="mailto:info@bluestoneocs.com" className="hover:text-brand-green transition-colors">info@bluestoneocs.com</a>
+                          <a href="mailto:info@bluestoneocs.com" className="hover:text-brand-green transition-colors uppercase">info@bluestoneocs.com</a>
                         </p>
                       </div>
                     </div>
@@ -118,7 +144,7 @@ const Contact = () => {
                         <Phone className="text-brand-green w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Call Us</h4>
+                        <h4 className="text-2xl font-black text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Call Us</h4>
                         <p className="text-lg font-bold">
                           <a href="tel:+919342899904" className="hover:text-brand-green transition-all">+91 93428 99904</a>
                         </p>
@@ -130,7 +156,7 @@ const Contact = () => {
                         <MapPin className="text-brand-green w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Visit Coimbatore HQ</h4>
+                        <h4 className="text-2xl font-black text-gray-400 mb-1 uppercase tracking-widest text-[10px]">Visit Coimbatore HQ</h4>
                         <p className="text-lg font-bold">
                           <a
                             href="https://www.google.com/maps/search/?api=1&query=Renaissance+Terrace+NO.126L+2nd+floor+Opp+Bishop+Appasamy+College+Coimbatore+641018"
@@ -269,6 +295,40 @@ const Contact = () => {
                     className="w-full px-8 py-5 rounded-[32px] bg-white border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 resize-none"
                     placeholder="Tell us about your goals..."
                   />
+                </div>
+
+                {/* Captcha Section */}
+                <div className="space-y-4 bg-white/50 p-6 rounded-[32px] border border-brand-green/5">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2 block mb-2">Human Verification</label>
+                      <div className="flex items-center gap-4">
+                        <div className="bg-gray-900 text-brand-green px-6 py-3 rounded-2xl font-mono text-2xl font-black tracking-[0.3em] select-none shadow-inner border border-white/10 flex-1 text-center italic">
+                          {captchaCode}
+                        </div>
+                        <button 
+                          type="button"
+                          onClick={generateCaptcha}
+                          className="w-12 h-12 rounded-xl bg-white border border-brand-green/10 flex items-center justify-center hover:bg-brand-green hover:text-white transition-all text-brand-green group/refresh"
+                          title="Refresh Code"
+                        >
+                          <RotateCcw className="w-5 h-5 group-hover/refresh:rotate-180 transition-transform duration-500" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Type the code above</label>
+                    <input
+                      type="text"
+                      required
+                      value={captchaInput}
+                      onChange={(e) => setCaptchaInput(e.target.value)}
+                      className="w-full px-8 py-5 rounded-3xl bg-white border border-brand-green/10 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-black text-gray-900 tracking-widest text-center"
+                      placeholder="XXXXXX"
+                      maxLength={6}
+                    />
+                  </div>
                 </div>
 
                 {status.message && (

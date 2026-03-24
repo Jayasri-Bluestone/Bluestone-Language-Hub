@@ -28,9 +28,9 @@ const Philippines = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="text-7xl md:text-9xl font-black leading-tight tracking-tighter mb-8 uppercase"
+            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
           >
-            AFFORDABLE <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8">EDUCATION.</span>
+            AFFORDABLE <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8 uppercase">EDUCATION.</span>
           </motion.h1>
           <p className="max-w-2xl mx-auto text-2xl font-bold italic opacity-90 px-4">
              "Study in the heart of Southeast Asia. Achieve your career goals with globally recognized medical and professional education at highly competitive costs."
@@ -42,7 +42,7 @@ const Philippines = () => {
       <section className="py-32 px-6">
         <div className="container mx-auto">
            <div className="text-center mb-24">
-              <h2 className="text-6xl font-black mb-8 tracking-tighter text-gray-900 leading-tight uppercase">Why Study in the Philippines?</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 leading-tight uppercase">Why Study in the Philippines?</h2>
               <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Discover high-quality education and a welcoming community in the heart of the Pacific.</p>
            </div>
            
@@ -78,7 +78,7 @@ const Philippines = () => {
          <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                <div>
-                  <h2 className="text-5xl font-black mb-12 tracking-tighter leading-tight uppercase">Your Philippine Journey</h2>
+                  <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter leading-tight uppercase">Your Philippine Journey</h2>
                   <div className="space-y-12">
                      {[
                        { title: 'Medical Admissions', desc: 'Expert guidance for securing seats in top Philippine medical and dental colleges.' },
@@ -128,7 +128,7 @@ const Philippines = () => {
       {/* CTA Section */}
       <section className="py-32 px-6 bg-brand-green text-white">
         <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-6xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8">Philippines?</span></h2>
+           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8 uppercase">Philippines?</span></h2>
            <button 
              onClick={openContactModal}
              className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto uppercase"

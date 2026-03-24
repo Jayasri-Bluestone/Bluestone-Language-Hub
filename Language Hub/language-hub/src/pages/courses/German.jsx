@@ -36,7 +36,7 @@ const German = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-9xl font-black leading-tight tracking-tighter mb-8"
+            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
           >
             GERMAN <br /> <span className="text-brand-green">LANGUAGE.</span>
           </motion.h1>
@@ -56,7 +56,7 @@ const German = () => {
         <div className="container mx-auto max-w-6xl">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div>
-                 <h2 className="text-5xl font-black mb-10 leading-tight tracking-tighter text-gray-900">Level up your career with German excellence</h2>
+                 <h2 className="text-4xl md:text-5xl font-black mb-10 leading-tight tracking-tighter text-gray-900 uppercase">Level up your career with German excellence</h2>
                  <p className="text-xl text-gray-500 mb-12 leading-relaxed font-bold">
                     German is the key to unlocking thousands of free education opportunities and high-paying jobs in the European Union. Our courses cover all levels from A1 (Beginner) to C2 (Advanced), with specific focus on Goethe-Institut exam preparation.
                  </p>
@@ -70,8 +70,8 @@ const German = () => {
                     ].map((item, i) => (
                       <div key={i} className="flex gap-4">
                          <div className="w-2 h-2 rounded-full bg-brand-green mt-3 flex-shrink-0" />
-                         <div>
-                            <h4 className="text-xl font-bold mb-1 text-gray-900">{item.title}</h4>
+                          <div>
+                             <h4 className="text-2xl font-black mb-1 text-gray-900 uppercase">{item.title}</h4>
                             <p className="text-sm text-gray-400 font-medium">{item.desc}</p>
                          </div>
                       </div>
@@ -94,7 +94,7 @@ const German = () => {
       {/* CTA */}
       <section className="py-32 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-6xl font-black mb-12 tracking-tighter">Ready to start your <span className="text-brand-green underline">German journey?</span></h2>
+           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase">Ready to start your <span className="text-brand-green underline">German journey?</span></h2>
            <button 
              onClick={openContactModal}
              className="px-16 py-8 bg-brand-green text-white rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl shadow-brand-green/20 active:scale-95 flex items-center gap-4 mx-auto"

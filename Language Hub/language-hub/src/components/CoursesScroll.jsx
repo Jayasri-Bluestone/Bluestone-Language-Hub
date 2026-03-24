@@ -89,8 +89,8 @@ const CoursesScroll = () => {
                             <Star className="w-4 h-4 text-brand-green fill-brand-green" />
                             <span className="text-xs font-black text-brand-green uppercase tracking-widest">Coaching Excellence</span>
                         </motion.div>
-                        <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 tracking-tighter uppercase leading-none">
-                            Our Elite <br /> <span className="text-brand-green italic">Coaching Programs.</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase leading-none">
+                            Our Elite <br /> <span className="text-brand-green">Coaching Programs.</span>
                         </h2>
                     </div>
 
@@ -132,7 +132,7 @@ const CoursesScroll = () => {
                                 <div className="w-16 h-16 rounded-3xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 mb-6 md:mb-8 group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-500">
                                     <course.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight uppercase">{course.title}</h3>
+                                <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight uppercase">{course.title}</h3>
                                 <p className="text-lg text-white/70 font-bold leading-relaxed mb-8 opacity-100 md:opacity-0 md:translate-y-4 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500">
                                     {course.desc}
                                 </p>

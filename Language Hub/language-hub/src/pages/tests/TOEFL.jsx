@@ -24,7 +24,7 @@ const TOEFL = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-8xl md:text-[160px] font-black text-gray-900 leading-[0.8] tracking-tighter mb-12"
+            className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.8] tracking-tighter mb-12 uppercase"
           >
             TOEFL <br /> <span className="text-brand-green">iBT.</span>
           </motion.h1>
@@ -59,7 +59,7 @@ const TOEFL = () => {
                        className="p-10 rounded-[48px] bg-white shadow-xl shadow-brand-green/5 border border-brand-green/10 group hover:border-brand-green transition-all duration-500"
                      >
                         <item.icon className="text-brand-green w-10 h-10 mb-6 group-hover:scale-110 transition-transform" />
-                        <h4 className="text-xl font-black text-gray-900 mb-2">{item.title}</h4>
+                        <h4 className="text-xl font-black text-gray-900 mb-2 uppercase">{item.title}</h4>
                         <div className="text-3xl font-black text-brand-green">{item.value}</div>
                      </motion.div>
                    ))}
@@ -67,7 +67,7 @@ const TOEFL = () => {
              </div>
 
              <div className="order-1 lg:order-2">
-                <h2 className="text-5xl font-black text-gray-900 mb-10 leading-tight">Master the Academic Language</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 leading-tight uppercase">Master the Academic Language</h2>
                 <p className="text-xl text-gray-500 mb-12 leading-relaxed font-medium">
                   TOEFL iBT requires a high level of academic English. Our course focuses on synthesizing information, integrated tasks, and the specific academic vocabulary required by US universities.
                 </p>

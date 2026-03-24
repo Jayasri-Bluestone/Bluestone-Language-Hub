@@ -63,7 +63,7 @@ const Abroad = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tighter"
+                            className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase"
                         >
                             Our Elite Offering <br />
                             <span className="text-brand-green">Abroad Studies</span>

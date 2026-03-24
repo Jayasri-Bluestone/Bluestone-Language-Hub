@@ -15,7 +15,7 @@ const Blog = () => {
          <div className="container mx-auto">
             <div className="text-center mb-24">
                <span className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block">Educational Insights</span>
-               <h1 className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter">LATEST <br /> <span className="text-gradient">BLOGS.</span></h1>
+               <h1 className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase">LATEST <br /> <span className="text-gradient uppercase">BLOGS.</span></h1>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -46,9 +46,9 @@ const Blog = () => {
                           {post.author}
                        </div>
                     </div>
-                    <h2 className="text-3xl font-black text-gray-900 mb-6 leading-tight group-hover:text-brand-green transition-colors">
-                       {post.title}
-                    </h2>
+                     <h2 className="text-3xl font-black text-gray-900 mb-6 leading-tight group-hover:text-brand-green transition-colors uppercase">
+                        {post.title}
+                     </h2>
                     <button className="flex items-center gap-3 text-lg font-black text-brand-green group-hover:gap-5 transition-all">
                        Read More <ArrowRight className="w-6 h-6" />
                     </button>

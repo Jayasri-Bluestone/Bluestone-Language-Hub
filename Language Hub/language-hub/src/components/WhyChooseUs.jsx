@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 tracking-tighter"
+                        className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase"
                     >
                         Why Choose <span className="text-gradient">Us?</span>
                     </motion.h2>
@@ -47,8 +47,8 @@ const WhyChooseUs = () => {
                             <div className="w-16 h-16 bg-brand-green-soft rounded-[24px] flex items-center justify-center mb-10 group-hover:bg-brand-green transition-colors duration-500 shadow-sm border border-brand-green/5">
                                 <reason.icon className="text-brand-green w-8 h-8 group-hover:text-white transition-colors" />
                             </div>
-                            <h3 className="text-3xl font-black text-gray-900 mb-6 tracking-tight">{reason.title}</h3>
-                            <p className="text-lg text-gray-400 font-bold leading-relaxed">
+                            <h3 className="text-2xl font-black text-gray-900 mb-6 tracking-tight uppercase">{reason.title}</h3>
+                            <p className="text-md text-gray-400 font-bold leading-relaxed">
                                 {reason.desc}
                             </p>
                         </motion.div>

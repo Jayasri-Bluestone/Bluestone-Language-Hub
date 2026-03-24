@@ -20,7 +20,7 @@ const Duolingo = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-8xl md:text-[180px] font-black text-gray-900 leading-[0.8] tracking-tighter mb-12"
+            className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.8] tracking-tighter mb-12 uppercase"
           >
             DET <br /> <span className="text-brand-green">MODERN.</span>
           </motion.h1>
@@ -55,7 +55,7 @@ const Duolingo = () => {
                   <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-10">
                      <item.icon className="text-brand-green w-8 h-8" />
                   </div>
-                  <h3 className="text-3xl font-black text-gray-900 mb-6 tracking-tight">{item.title}</h3>
+                  <h3 className="text-3xl font-black text-gray-900 mb-6 tracking-tight uppercase">{item.title}</h3>
                   <p className="text-lg text-gray-400 font-bold leading-relaxed">{item.desc}</p>
                </motion.div>
              ))}
@@ -63,7 +63,7 @@ const Duolingo = () => {
 
           <div className="p-16 rounded-[72px] bg-brand-green text-white flex flex-col items-center text-center shadow-2xl shadow-brand-green/10">
              <Globe className="w-20 h-20 mb-10 opacity-50" />
-             <h2 className="text-6xl font-black mb-8 leading-tight tracking-tighter max-w-3xl">Accepted by 4,500+ Institutions Worldwide</h2>
+             <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight tracking-tighter max-w-3xl uppercase">Accepted by 4,500+ Institutions Worldwide</h2>
              <p className="text-2xl opacity-80 mb-12 font-bold max-w-2xl">Don't wait months. Get your score in 48 hours with our Duolingo English Test prep.</p>
              <button 
                onClick={openContactModal}

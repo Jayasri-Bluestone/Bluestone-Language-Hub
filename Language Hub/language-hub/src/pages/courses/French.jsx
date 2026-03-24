@@ -35,9 +35,9 @@ const French = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-9xl font-black leading-tight tracking-tighter mb-8"
+            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
           >
-            PARIS <br /> <span className="text-white opacity-80">AWAITS.</span>
+            PARIS <br /> <span className="text-white opacity-80 uppercase">AWAITS.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ const French = () => {
       <section className="py-32 px-6">
         <div className="container mx-auto">
            <div className="text-center mb-24">
-              <h2 className="text-6xl font-black mb-8 tracking-tighter text-gray-900">Course Levels</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 uppercase">Course Levels</h2>
               <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">From complete beginner to advanced proficiency, we cover everything according to CEFR standards.</p>
            </div>
            
@@ -73,7 +73,7 @@ const French = () => {
                       <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.level} />
                    </div>
                    <div className="p-12">
-                      <h3 className="text-4xl font-black mb-4 text-gray-900">{item.level}</h3>
+                      <h3 className="text-3xl font-black mb-4 text-gray-900 uppercase">{item.level}</h3>
                       <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
                       <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
                          Explore Catalog <ArrowRight className="w-4 h-4" />
@@ -90,7 +90,7 @@ const French = () => {
          <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-balance">
                <div>
-                  <h2 className="text-5xl font-black mb-12 tracking-tighter">Why Learn French?</h2>
+                  <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase">Why Learn French?</h2>
                   <div className="space-y-10">
                      {[
                        { title: 'Global Opportunities', desc: 'Spoken by 300+ million people across 5 continents.' },
@@ -102,7 +102,7 @@ const French = () => {
                              <ShieldCheck className="text-brand-green w-6 h-6" />
                           </div>
                           <div>
-                             <h4 className="text-2xl font-black mb-2">{feat.title}</h4>
+                             <h4 className="text-2xl font-black mb-2 uppercase">{feat.title}</h4>
                              <p className="text-gray-400 font-bold">{feat.desc}</p>
                           </div>
                        </div>
@@ -113,7 +113,7 @@ const French = () => {
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-green/10 blur-[120px]" />
                   <BookOpen className="w-full h-full text-brand-green opacity-10 absolute animate-pulse" />
                   <div className="bg-gray-800 p-12 rounded-[60px] relative z-10 border border-white/5">
-                     <h3 className="text-3xl font-black mb-8 border-b border-white/10 pb-4">Exam Preparation</h3>
+                     <h3 className="text-3xl font-black mb-8 border-b border-white/10 pb-4 uppercase">Exam Preparation</h3>
                      <ul className="space-y-6 font-bold text-gray-300">
                         <li className="flex items-center gap-4">
                            <div className="w-2 h-2 rounded-full bg-brand-green" />
@@ -141,7 +141,7 @@ const French = () => {
       {/* CTA */}
       <section className="py-32 px-6 bg-brand-green text-white">
         <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-6xl font-black mb-12 tracking-tighter text-balance">Become part of the global <br /><span className="opacity-80 underline">Francophonie today.</span></h2>
+           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter text-balance uppercase">Become part of the global <br /><span className="opacity-80 underline">Francophonie today.</span></h2>
            <button 
              onClick={openContactModal}
              className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto"

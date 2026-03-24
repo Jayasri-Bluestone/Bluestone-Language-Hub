@@ -15,7 +15,7 @@ const SuccessStories = () => {
         <div className="container mx-auto">
           <div className="text-center mb-24">
              <span className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block">Hall of Fame</span>
-             <h1 className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter">SUCCESS <br /> <span className="text-gradient">STORIES.</span></h1>
+             <h1 className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase">SUCCESS <br /> <span className="text-gradient uppercase">STORIES.</span></h1>
           </div>
 
           <div className="grid grid-cols-1 gap-16">
@@ -41,7 +41,7 @@ const SuccessStories = () => {
                      <div className="flex items-center gap-2 mb-6">
                         {[...Array(5)].map((_, i) => <Star key={i} className="text-amber-500 w-5 h-5 fill-current" />)}
                      </div>
-                     <h3 className="text-5xl font-black text-gray-900 mb-4">{story.name}</h3>
+                     <h3 className="text-3xl font-black text-gray-900 mb-4 uppercase">{story.name}</h3>
                      <div className="text-2xl font-black text-brand-green mb-8">{story.result} • {story.uni}</div>
                      <p className="text-2xl text-gray-500 font-bold leading-relaxed italic mb-10">
                         "{story.text}"

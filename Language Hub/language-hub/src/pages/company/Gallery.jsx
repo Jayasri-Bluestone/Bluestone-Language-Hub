@@ -17,7 +17,7 @@ const Gallery = () => {
          <div className="container mx-auto">
             <div className="text-center mb-24">
                <span className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block">Life at Bluestone</span>
-               <h1 className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter">OUR <br /> <span className="text-gradient">GALLERY.</span></h1>
+                <h1 className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase">OUR <br /> <span className="text-gradient uppercase">GALLERY.</span></h1>
             </div>
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-12">

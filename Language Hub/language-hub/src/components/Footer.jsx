@@ -97,16 +97,8 @@ const Footer = () => {
                     <div className="md:col-span-3">
                         <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brand-green mb-10">Join Our Insider</h4>
                         <p className="text-gray-400 mb-8 font-bold leading-relaxed">Get the latest updates on study abroad opportunities.</p>
-                        <form className="relative group">
-                            <input
-                                type="email"
-                                placeholder="Email Address"
-                                className="bg-brand-green-soft/10 border border-brand-green/10 px-6 py-5 rounded-2xl w-full focus:outline-none focus:border-brand-green transition-colors font-bold placeholder:text-gray-600"
-                            />
-                            <button className="absolute right-2 top-2 bottom-2 bg-brand-green hover:bg-brand-green-light px-5 rounded-xl transition-all active:scale-95 flex items-center justify-center">
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
-                        </form>
+                       
+                      
                     </div>
                 </div>
 

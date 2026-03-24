@@ -12,23 +12,16 @@ const Testimonials = () => {
    return (
       <section id="success" className="py-32 bg-white px-6 overflow-hidden">
          <div className="container mx-auto">
-            <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12 text-center lg:text-left">
-               <div className="max-w-2xl">
-                  <motion.span
-                     initial={{ opacity: 0, x: -20 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block text-xs"
-                  >
-                     Our Wall of Fame
-                  </motion.span>
-                  <motion.h2
-                     initial={{ opacity: 0, y: 20 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter"
-                  >
-                     Stories of <br /> <span className="text-gradient">Success.</span>
-                  </motion.h2>
-               </div>
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 md:mb-24 gap-8">
+                <div className="max-w-2xl">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase"
+                    >
+                        Voice of Our <br /> <span className="text-gradient">Elite Alumni.</span>
+                    </motion.h2>
+                </div>
                <div className="flex items-center gap-4 bg-brand-green-soft p-6 rounded-[32px] border border-brand-green/10">
                   <div className="flex -space-x-4">
                      {[...Array(4)].map((_, i) => (
@@ -65,8 +58,8 @@ const Testimonials = () => {
                         <div className="w-16 h-16 rounded-3xl overflow-hidden border border-brand-green/10 shadow-xl">
                            <img src={review.image} className="w-full h-full object-cover" alt={review.name} />
                         </div>
-                        <div>
-                           <h4 className="text-xl font-black text-gray-900 tracking-tight">{review.name}</h4>
+                         <div>
+                            <h4 className="text-3xl font-black text-gray-900 tracking-tight uppercase">{review.name}</h4>
                            <div className="flex items-center gap-2">
                               <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
                               <span className="text-xs font-black text-brand-green uppercase tracking-tighter">{review.score}</span>

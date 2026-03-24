@@ -30,14 +30,14 @@ const GlobalImpact = () => {
                         >
                             Our Core DNA
                         </motion.span>
-                        <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 mb-8 md:mb-10 leading-[0.9] tracking-tighter">
-                            A Legacy of <br />
-                            <span className="text-gradient">Educational</span> <br />
-                            Excellence.
+                        <motion.div className="max-w-4xl">
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 md:mb-10 leading-[0.9] tracking-tighter uppercase">
+                            Redefining <br /> <span className="text-brand-green">Global Education.</span>
                         </h2>
                         <p className="text-lg md:text-xl text-gray-400 mb-12 md:mb-16 leading-relaxed font-semibold max-w-xl">
                             We separate ourselves through a combination of traditional rigor and modern innovation. Our methodology is designed to ensure every student doesn't just pass, but excels.
                         </p>
+                        </motion.div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                             {highlights.map((item, i) => (
@@ -53,7 +53,7 @@ const GlobalImpact = () => {
                                         <item.icon className="text-brand-green w-7 h-7 group-hover:text-white transition-colors" />
                                     </div>
                                     <div>
-                                        <h4 className="text-2xl font-black text-gray-900 mb-3">{item.title}</h4>
+                                        <h4 className="text-2xl font-black text-gray-900 mb-3 uppercase">{item.title}</h4>
                                         <p className="text-sm text-gray-400 font-bold leading-relaxed">{item.desc}</p>
                                     </div>
                                 </motion.div>
@@ -84,7 +84,7 @@ const GlobalImpact = () => {
                                     </motion.div>
 
                                     <div className="bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-3xl md:rounded-[48px] shadow-xl border border-white/60">
-                                        <h5 className="text-2xl md:text-4xl font-black text-gray-900 mb-4 md:mb-6 tracking-tight">India to the <span className="text-brand-green">World</span></h5>
+                                        <h5 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 md:mb-6 tracking-tight uppercase">India to the <span className="text-brand-green uppercase">World</span></h5>
                                         <p className="text-gray-500 font-bold text-base md:text-lg leading-relaxed mb-6 md:mb-8">Headquartered in Coimbatore with branches in Chennai, Trichy, Erode, Tirunelveli, and more.</p>
 
                                         <div className="flex flex-wrap justify-center gap-4">

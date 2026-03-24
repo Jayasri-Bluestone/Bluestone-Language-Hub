@@ -30,7 +30,7 @@ const OET = () => {
           <motion.h1 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-8xl md:text-[160px] font-black text-gray-900 leading-[0.8] tracking-tighter mb-12"
+            className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.8] tracking-tighter mb-12 uppercase"
           >
             OET <br /> <span className="text-gradient">CHAMPIONS.</span>
           </motion.h1>
@@ -54,7 +54,7 @@ const OET = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-               <h2 className="text-5xl font-black text-gray-900 mb-10 leading-tight">Elite Coaching for Nurses & Doctors</h2>
+               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 leading-tight uppercase">Elite Coaching for Nurses & Doctors</h2>
                <p className="text-xl text-gray-500 mb-12 leading-relaxed font-medium">
                   We understand that your profession demands precision. Our OET training uses real-world healthcare scenarios to ensure you're not just passing a test, but preparing for your career in the UK, Ireland, or Australia.
                </p>
@@ -70,7 +70,7 @@ const OET = () => {
                           <item.icon className="text-red-500 w-8 h-8 group-hover:text-white transition-colors" />
                        </div>
                        <div>
-                          <h4 className="text-2xl font-black text-gray-900 mb-2">{item.title}</h4>
+                          <h4 className="text-2xl font-black text-gray-900 mb-2 uppercase">{item.title}</h4>
                           <p className="text-gray-400 font-bold">Specially curated content for your specific healthcare profession.</p>
                        </div>
                     </li>
@@ -87,7 +87,7 @@ const OET = () => {
                <div className="absolute top-0 right-0 p-12 opacity-5">
                   <Heart className="w-64 h-64 text-red-500" />
                </div>
-               <h3 className="text-4xl font-black text-gray-900 mb-10 relative z-10">Why OET with Bluestone?</h3>
+               <h3 className="text-3xl font-black text-gray-900 mb-10 relative z-10 uppercase">Why OET with Bluestone?</h3>
                <div className="space-y-6 mb-12 relative z-10">
                   {[
                     'Specialist Healthcare Trainers',

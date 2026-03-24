@@ -29,7 +29,7 @@ const PTE = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl sm:text-7xl md:text-[180px] font-black text-gray-900 leading-[0.85] md:leading-[0.8] tracking-tighter mb-12"
+                        className="text-5xl md:text-5xl font-black text-gray-900 leading-[0.85] md:leading-[0.8] tracking-tighter mb-12 uppercase"
                     >
                         PTE <br /> <span className="text-brand-green underline decoration-brand-green/20 underline-offset-[20px]">FAST-TRACK.</span>
                     </motion.h1>
@@ -64,7 +64,7 @@ const PTE = () => {
                                 <div className="w-20 h-20 bg-brand-green-soft rounded-[28px] flex items-center justify-center mb-10 group-hover:bg-brand-green transition-colors duration-500">
                                     <item.icon className="text-brand-green w-10 h-10 group-hover:text-white transition-colors" />
                                 </div>
-                                <h3 className="text-4xl font-black text-gray-900 mb-6 tracking-tight">{item.title}</h3>
+                                <h3 className="text-3xl font-black text-gray-900 mb-6 tracking-tight uppercase">{item.title}</h3>
                                 <p className="text-xl text-gray-400 font-bold leading-relaxed">
                                     {item.desc}
                                 </p>
@@ -75,7 +75,7 @@ const PTE = () => {
                     <div className="mt-20 md:mt-32 p-10 md:p-20 rounded-[40px] md:rounded-[80px] bg-gray-900 text-white flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-green/20 rounded-full blur-[100px]" />
                         <div className="relative z-10 max-w-2xl text-center lg:text-left">
-                            <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tighter">Ready to conquer the <span className="text-brand-green">Pearson Test?</span></h2>
+                            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight tracking-tighter uppercase">Ready to conquer the <span className="text-brand-green">Pearson Test?</span></h2>
                             <p className="text-2xl text-gray-400 font-bold mb-0">Join the elite batch and get personal feedback on every mock test.</p>
                         </div>
                         <button

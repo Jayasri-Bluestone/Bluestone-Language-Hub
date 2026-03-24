@@ -28,9 +28,9 @@ const Italy = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="text-7xl md:text-9xl font-black leading-tight tracking-tighter mb-8 uppercase"
+            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
           >
-            DESIGN & <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8">HERITAGE.</span>
+            DESIGN & <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8 uppercase">HERITAGE.</span>
           </motion.h1>
           <p className="max-w-2xl mx-auto text-2xl font-bold italic opacity-90 px-4">
              "Immerse yourself in world-class education in the heart of European culture and innovation."
@@ -42,7 +42,7 @@ const Italy = () => {
       <section className="py-32 px-6">
         <div className="container mx-auto">
            <div className="text-center mb-24">
-              <h2 className="text-6xl font-black mb-8 tracking-tighter text-gray-900">Why Study in Italy?</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 uppercase">Why Study in Italy?</h2>
               <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Experience the perfect blend of ancient heritage and modern innovation in one of the world's most beautiful countries.</p>
            </div>
            
@@ -61,7 +61,7 @@ const Italy = () => {
                       <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
                    </div>
                    <div className="p-12">
-                      <h3 className="text-3xl font-black mb-4 text-gray-900">{item.title}</h3>
+                      <h3 className="text-3xl font-black mb-4 text-gray-900 uppercase">{item.title}</h3>
                       <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
                       <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
                          View Requirements <ArrowRight className="w-4 h-4" />
@@ -78,7 +78,7 @@ const Italy = () => {
          <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                <div>
-                  <h2 className="text-5xl font-black mb-12 tracking-tighter">Your Italian Journey</h2>
+                  <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase">Your Italian Journey</h2>
                   <div className="space-y-12">
                      {[
                        { title: 'University Selection', desc: 'Helping you choose the right institution among Italy\'s top universities.' },
@@ -90,7 +90,7 @@ const Italy = () => {
                              <Target className="text-brand-green w-8 h-8" />
                           </div>
                           <div>
-                             <h4 className="text-2xl font-black mb-2">{feat.title}</h4>
+                             <h4 className="text-2xl font-black mb-2 uppercase">{feat.title}</h4>
                              <p className="text-gray-400 font-bold text-lg">{feat.desc}</p>
                           </div>
                        </div>
@@ -128,7 +128,7 @@ const Italy = () => {
       {/* CTA Section */}
       <section className="py-32 px-6 bg-brand-green text-white">
         <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-6xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8">Italy?</span></h2>
+           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8 uppercase">Italy?</span></h2>
            <button 
              onClick={openContactModal}
              className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto uppercase"

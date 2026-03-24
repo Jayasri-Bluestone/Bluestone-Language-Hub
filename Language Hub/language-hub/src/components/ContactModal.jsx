@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Phone, Mail, MapPin } from 'lucide-react';
+import { X, Send, Phone, Mail, MapPin, RotateCcw } from 'lucide-react';
 import { useContactModal } from '../context/ModalContext';
 
 const ContactModal = () => {
@@ -14,6 +14,24 @@ const ContactModal = () => {
   });
   const [status, setStatus] = React.useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [captchaCode, setCaptchaCode] = React.useState('');
+  const [captchaInput, setCaptchaInput] = React.useState('');
+
+  const generateCaptcha = () => {
+    const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setCaptchaCode(result);
+  };
+
+  React.useEffect(() => {
+    if (isContactModalOpen) {
+      generateCaptcha();
+      setCaptchaInput('');
+    }
+  }, [isContactModalOpen]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +40,12 @@ const ContactModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (captchaInput !== captchaCode) {
+      setStatus({ type: 'error', message: 'Invalid verification code.' });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
@@ -56,6 +80,7 @@ const ContactModal = () => {
         }, 2000);
       } else {
         setStatus({ type: 'error', message: 'Failed to send inquiry.' });
+        generateCaptcha();
       }
     } catch (error) {
       setStatus({ type: 'error', message: 'Connection error.' });
@@ -192,6 +217,40 @@ const ContactModal = () => {
                     className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-bold text-gray-900 resize-none" 
                     placeholder="Tell us about your goals..." 
                   />
+                </div>
+
+                {/* Captcha Section */}
+                <div className="space-y-4 bg-gray-50/50 p-6 rounded-2xl border border-gray-100">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2 block mb-2">Verification Code</label>
+                      <div className="flex items-center gap-3">
+                        <div className="bg-gray-900 text-brand-green px-4 py-2 rounded-xl font-mono text-xl font-black tracking-[0.2em] select-none shadow-inner flex-1 text-center italic">
+                          {captchaCode}
+                        </div>
+                        <button 
+                          type="button"
+                          onClick={generateCaptcha}
+                          className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center hover:bg-brand-green hover:text-white transition-all text-brand-green group/refresh"
+                          title="Refresh Code"
+                        >
+                          <RotateCcw className="w-4 h-4 group-hover/refresh:rotate-180 transition-transform duration-500" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Type the code</label>
+                    <input
+                      type="text"
+                      required
+                      value={captchaInput}
+                      onChange={(e) => setCaptchaInput(e.target.value)}
+                      className="w-full px-6 py-3 rounded-2xl bg-white border border-gray-100 focus:border-brand-green focus:ring-4 focus:ring-brand-green/5 outline-none transition-all font-black text-gray-900 tracking-widest text-center"
+                      placeholder="XXXXXX"
+                      maxLength={6}
+                    />
+                  </div>
                 </div>
 
                 {status.message && (
