@@ -36,7 +36,7 @@ const German = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-7xl md:text-9xl font-black leading-tight tracking-tighter mb-8"
+            className="text-5xl md:text-9xl font-black leading-tight tracking-tighter mb-8"
           >
             GERMAN <br /> <span className="text-brand-green">LANGUAGE.</span>
           </motion.h1>

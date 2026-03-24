@@ -1,20 +1,37 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { BookOpen, GraduationCap, Languages, Target, Star, ArrowRight } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { BookOpen, GraduationCap, Languages, Target, Star, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useContactModal } from '../context/ModalContext';
-
 const CoursesScroll = () => {
     const { openContactModal } = useContactModal();
     const targetRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
         offset: ["start end", "end start"]
     });
 
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % courses.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev - 1 + courses.length) % courses.length);
+    };
+
     // Opposite scroll: start from left/negative and move right
     const x = useTransform(scrollYProgress, [0, 1], ["-80%", "20%"]);
-
     const courses = [
         {
             title: 'IELTS',
@@ -59,60 +76,58 @@ const CoursesScroll = () => {
             link: '/courses/french'
         }
     ];
-
     return (
-        <section ref={targetRef} className="relative h-auto md:h-[300vh] bg-brand-green-soft/30 py-20 md:py-0">
+        <section id="courses" ref={targetRef} className="relative h-auto md:h-[300vh] bg-brand-green-soft/30 py-20 md:py-0">
             <div className="md:sticky md:top-0 md:h-screen flex flex-col justify-center overflow-hidden">
-                <div className="container mx-auto px-6 mb-12 relative z-20">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 mb-6 border border-brand-green/20"
-                    >
-                        <Star className="w-4 h-4 text-brand-green fill-brand-green" />
-                        <span className="text-xs font-black text-brand-green uppercase tracking-widest">Coaching Excellence</span>
-                    </motion.div>
-                    <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 tracking-tighter uppercase leading-none">
-                        Our Elite <br /> <span className="text-brand-green italic">Coaching Programs.</span>
-                    </h2>
-<<<<<<< HEAD
-                </div>
+                <div className="container mx-auto px-6 mb-12 relative z-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 mb-6 border border-brand-green/20"
+                        >
+                            <Star className="w-4 h-4 text-brand-green fill-brand-green" />
+                            <span className="text-xs font-black text-brand-green uppercase tracking-widest">Coaching Excellence</span>
+                        </motion.div>
+                        <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 tracking-tighter uppercase leading-none">
+                            Our Elite <br /> <span className="text-brand-green italic">Coaching Programs.</span>
+                        </h2>
+                    </div>
 
-        <motion.div 
-          style={{ x }} 
-          className="flex gap-8 relative z-10 px-[5vw]"
-        >
-          {courses.map((course, i) => (
-            <div 
-              key={i} 
-              className="flex-shrink-0 w-[350px] h-[350px] rounded-[60px] overflow-hidden relative group shadow-2xl border border-white/20"
-            >
-              <div className="absolute inset-0 z-0">
-                <img src={course.img} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={course.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
-              </div>
-              
-              <div className="absolute inset-0 p-12 flex flex-col justify-end z-10">
-                <div className="w-16 h-16 rounded-3xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 mb-8 group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-500">
-                  <course.icon className="w-8 h-8 text-white" />
-=======
->>>>>>> fc35cd7927a24161387d0c476418c0a9bb792e5b
+                    {/* Mobile Navigation Controls */}
+                    {isMobile && (
+                        <div className="flex gap-4 self-end">
+                            <button
+                                onClick={prevSlide}
+                                className="w-14 h-14 rounded-full border-2 border-brand-green/20 flex items-center justify-center hover:bg-brand-green hover:text-white transition-all active:scale-95"
+                            >
+                                <ChevronLeft className="w-6 h-6" />
+                            </button>
+                            <button
+                                onClick={nextSlide}
+                                className="w-14 h-14 rounded-full bg-gray-900 flex items-center justify-center hover:bg-brand-green transition-all active:scale-95"
+                            >
+                                <ChevronRight className="w-6 h-6 text-white" />
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 <motion.div
-                    style={typeof window !== 'undefined' && window.innerWidth >= 768 ? { x } : {}}
-                    className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-8 relative z-10 px-6 md:px-[5vw] md:w-max"
+                    animate={isMobile ? { x: `-${currentIndex * 100}%` } : {}}
+                    style={!isMobile ? { x } : {}}
+                    transition={{ type: "spring", damping: 25, stiffness: 120 }}
+                    className={`relative z-10 ${isMobile ? 'flex gap-0' : 'grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-8 px-6 md:px-[5vw] md:w-max'}`}
                 >
                     {courses.map((course, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 w-full md:w-[350px] h-[350px] rounded-[32px] md:rounded-[60px] overflow-hidden relative group shadow-2xl border border-white/20"
+                            className={`flex-shrink-0 ${isMobile ? 'w-full px-4' : 'w-[350px] shadow-2xl'} h-[400px] md:h-[350px] rounded-[32px] md:rounded-[60px] overflow-hidden relative group border border-white/20`}
                         >
                             <div className="absolute inset-0 z-0">
                                 <img src={course.img} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={course.title} />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
                             </div>
-
                             <div className="absolute inset-0 p-12 flex flex-col justify-end z-10">
                                 <div className="w-16 h-16 rounded-3xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 mb-6 md:mb-8 group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-500">
                                     <course.icon className="w-8 h-8 text-white" />
@@ -140,5 +155,4 @@ const CoursesScroll = () => {
         </section>
     );
 };
-
 export default CoursesScroll;

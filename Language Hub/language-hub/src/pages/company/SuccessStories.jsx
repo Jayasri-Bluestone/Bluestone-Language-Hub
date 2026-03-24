@@ -11,7 +11,7 @@ const SuccessStories = () => {
 
   return (
     <div className="pt-20 bg-white">
-      <section className="py-32 px-6">
+      <section className="py-16 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-24">
              <span className="text-brand-green font-black tracking-[0.4em] uppercase mb-8 block">Hall of Fame</span>

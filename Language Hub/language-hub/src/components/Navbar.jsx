@@ -126,65 +126,6 @@ const MobileNavItem = ({ name, href, items, onClick }) => {
   );
 };
 
-const MobileNavItem = ({ name, href, items, onClick }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const hasItems = items && items.length > 0;
-
-  return (
-    <div className="flex flex-col gap-2">
-      <div className="flex items-center justify-between">
-        {hasItems ? (
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-xl font-black text-gray-900 hover:text-brand-green transition-colors flex items-center justify-between w-full text-left"
-          >
-            {name}
-            <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-          </button>
-        ) : (
-          <Link
-            to={href}
-            onClick={onClick}
-            className="text-xl font-black text-gray-900 hover:text-brand-green transition-colors"
-          >
-            {name}
-          </Link>
-        )}
-      </div>
-
-      <AnimatePresence>
-        {hasItems && isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="overflow-hidden"
-          >
-            <div className="grid grid-cols-1 gap-2 pl-4 border-l-2 border-brand-green/10 mt-2 py-2">
-              {items.map((sub, sidx) => (
-                <Link
-                  key={sidx}
-                  to={sub.href}
-                  onClick={onClick}
-                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-green-soft transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-brand-green-soft flex items-center justify-center">
-                    {sub.icon && <sub.icon className="w-5 h-5 text-brand-green" />}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-bold text-gray-700">{sub.name}</span>
-                    {sub.desc && <span className="text-[10px] text-gray-400 font-medium">{sub.desc}</span>}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
 
 const Navbar = () => {
   const { openContactModal } = useContactModal();
@@ -207,7 +148,7 @@ const Navbar = () => {
 
         {
       name: 'Courses',
-      href: '/courses',
+      href: '/#courses',
       items: [
         { name: 'IELTS', href: '/tests/ielts', icon: BookOpen, desc: 'Master all 4 modules' },
         { name: 'PTE', href: '/tests/pte', icon: Target, desc: 'Fast-track your success' },
@@ -220,7 +161,7 @@ const Navbar = () => {
    
     {
       name: 'Study Abroad',
-      href: '/abroad',
+      href: '/#aboard',
       items: [
         { name: 'Canada', href: '/abroad/canada', icon: Globe, desc: 'Quality education & PR' },
         { name: 'USA', href: '/abroad/usa', icon: Target, desc: 'World-class universities' },

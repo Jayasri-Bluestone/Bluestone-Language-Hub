@@ -5,7 +5,6 @@ import supportImg from '../assets/support.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useContactModal } from '../context/ModalContext';
-
 const HorizontalScroll = () => {
     const { openContactModal } = useContactModal();
     const targetRef = useRef(null);
@@ -13,15 +12,12 @@ const HorizontalScroll = () => {
         target: targetRef,
         offset: ["start start", "end end"]
     });
-
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
-
     const items = [
         { title: 'Excellence', text: 'Top-tier coaching for IELTS and PTE with a focus on mastery.', image: excellenceImg },
         { title: 'Global', text: 'Opening pathways to elite universities in the USA, UK, and beyond.', image: globalImg },
         { title: 'Support', text: 'Full visa, admission, and linguistic guidance for every student.', image: supportImg },
     ];
-
     return (
         <section
             ref={targetRef}
@@ -50,7 +46,6 @@ const HorizontalScroll = () => {
                             Scroll to explore the pillars of Bluestone Language Hub. We don't just teach languages; <span className="text-gray-900 italic underline decoration-brand-green/30 underline-offset-8">we bridge worlds.</span>
                         </p>
                     </div>
-
                     {/* Feature Cards */}
                     {items.map((item, i) => (
                         <div key={i} className="flex-shrink-0 w-full md:w-[450px] h-[400px] md:h-[500px] flex flex-col justify-end p-8 md:p-20 rounded-[40px] md:rounded-[80px] relative overflow-hidden group shadow-2xl transition-all duration-1000 hover:translate-y-[-20px] border border-gray-100">
@@ -64,12 +59,10 @@ const HorizontalScroll = () => {
                                 <p className="text-lg md:text-2xl opacity-70 leading-relaxed font-bold max-w-md">
                                     {item.text}
                                 </p>
-
                                 <div className="mt-12 h-px w-0 group-hover:w-full bg-brand-green-pop transition-all duration-700" />
                             </div>
                         </div>
                     ))}
-
                     {/* Final Call to Action in Scroll */}
                     <div className="flex-shrink-0 w-full md:w-[50vw] flex flex-col justify-center items-center text-center py-10">
                         <motion.h2
@@ -89,5 +82,4 @@ const HorizontalScroll = () => {
         </section>
     );
 };
-
 export default HorizontalScroll;

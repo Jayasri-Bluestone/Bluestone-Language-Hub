@@ -6,7 +6,7 @@ const AboutUsPage = () => {
     return (
         <div className="pt-20 bg-white">
             {/* Hero Section */}
-            <section className="py-32 bg-gray-50 px-6">
+            <section className="py-16 bg-gray-50 px-6">
                 <div className="container mx-auto">
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
@@ -18,7 +18,7 @@ const AboutUsPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="text-8xl md:text-[160px] font-black text-gray-900 leading-[0.8] tracking-tighter mb-16 text-center"
+                        className="text-5xl md:text-[160px] font-black text-gray-900 leading-[0.8] tracking-tighter mb-16 text-center"
                     >
                         THE BLUESTONE <br /> <span className="text-gradient">WAY.</span>
                     </motion.h1>

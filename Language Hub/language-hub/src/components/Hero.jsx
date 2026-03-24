@@ -83,7 +83,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="max-w-xl mx-auto text-xl md:text-2xl text-gray-700 mb-16 leading-relaxed font-semibold italic"
+            className="max-w-xl text-xl md:text-2xl text-gray-700 mb-16 leading-relaxed font-semibold italic"
           >
             "Beyond language, we build global futures." <br />Step into the world's most elite IELTS, PTE, and OET coaching hub.
           </motion.p>
