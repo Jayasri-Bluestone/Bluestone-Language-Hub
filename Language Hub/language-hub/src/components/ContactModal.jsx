@@ -80,7 +80,7 @@ const ContactModal = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-4xl bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+            className="relative w-[95%] md:w-full max-w-4xl bg-white rounded-3xl md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[80vh] md:max-h-[80vh]"
           >
             {/* Left side - Brand Info */}
             <div className="w-full md:w-1/3 bg-gray-900 p-8 text-white hidden md:flex flex-col justify-between">
