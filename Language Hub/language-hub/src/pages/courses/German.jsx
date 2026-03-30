@@ -13,7 +13,7 @@ const German = () => {
         description="Master the German language with our expert-led courses. From A1 to C2 levels, we prepare you for life in Germany." 
       />
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=2070" 

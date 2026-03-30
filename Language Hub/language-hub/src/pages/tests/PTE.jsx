@@ -8,14 +8,14 @@ const PTE = () => {
     return (
         <div className="pt-20 bg-[#f8f9ff]">
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2070"
-                        className="w-full h-full object-cover opacity-10 filter grayscale brightness-50"
+                        className="w-full h-full object-cover opacity-50 filter grayscale brightness-50"
                         alt="PTE Hero"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#f8f9ff]" />
+                    <div className="absolute inset-0" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
@@ -37,7 +37,7 @@ const PTE = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="max-w-xl mx-auto text-2xl text-gray-400 font-bold"
+                        className="max-w-xl mx-auto text-2xl text-gray-800 font-bold"
                     >
                         "The AI-powered test demands an AI-powered preparation. Achieve your 79+ score with us."
                     </motion.p>

@@ -8,7 +8,7 @@ const Duolingo = () => {
   return (
     <div className="pt-20 bg-brand-green-soft/30">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div 
             initial={{ rotate: -10, scale: 0.8 }}
@@ -28,7 +28,7 @@ const Duolingo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="max-w-xl mx-auto text-2xl text-gray-400 font-bold"
+            className="max-w-xl mx-auto text-2xl text-gray-800 font-bold"
           >
             "The world's most convenient, fast, and affordable English test. Take it anywhere, anytime."
           </motion.p>

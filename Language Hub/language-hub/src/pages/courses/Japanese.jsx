@@ -13,7 +13,7 @@ const Japanese = () => {
         description="Learn Japanese from native-level experts. Prepare for JLPT and explore career opportunities in Japan." 
       />
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=2070" 

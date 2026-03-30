@@ -1,143 +1,52 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Globe, ShieldCheck, Target, ArrowRight, BookOpen } from 'lucide-react';
-import SEO from '../../components/SEO';
-import { useContactModal } from '../../context/ModalContext';
+import CountryLayout from '../../components/abroad/CountryLayout';
 
 const Italy = () => {
-  const { openContactModal } = useContactModal();
-  return (
-    <div className="pt-20 bg-white">
-      <SEO title="Study in Italy | Design & Heritage | Bluestone Overseas" description="Immerse yourself in the birthplace of art and design. Expert guidance for Italian university admissions." />
-      
-      {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover brightness-50" alt="Italy" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-green/40" />
-        </div>
-        <div className="container mx-auto px-6 relative z-10 text-center text-white p-6">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md mb-8 border border-white/30"
-          >
-            <Globe className="w-5 h-5 text-white" />
-            <span className="text-sm font-black uppercase tracking-widest text-white">Study in Italy</span>
-          </motion.div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
-          >
-            DESIGN & <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8 uppercase">HERITAGE.</span>
-          </motion.h1>
-          <p className="max-w-2xl mx-auto text-2xl font-bold italic opacity-90 px-4">
-             "Immerse yourself in world-class education in the heart of European culture and innovation."
-          </p>
-        </div>
-      </section>
-
-      {/* Benefits Grid */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto">
-           <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 uppercase">Why Study in Italy?</h2>
-              <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Experience the perfect blend of ancient heritage and modern innovation in one of the world's most beautiful countries.</p>
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {[
-                { title: 'Art & Design Capital', desc: 'World-class education in fashion, design, and architecture with deep industry roots.', img: 'https://images.unsplash.com/photo-1543857778-c4a1a3e0b2ea?auto=format&fit=crop&q=80&w=600' },
-                { title: 'Academic Excellence', desc: 'Home to some of Europe\'s oldest and most prestigious universities with cutting-edge research.', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=600' },
-                { title: 'Affordable Tuition', desc: 'Competitive tuition fees and numerous scholarship opportunities for international students.', img: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600' }
-              ].map((item, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ y: -20 }}
-                  className="rounded-[60px] overflow-hidden bg-gray-50 border border-gray-100 group shadow-xl"
-                >
-                   <div className="h-72 overflow-hidden">
-                      <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                   </div>
-                   <div className="p-12">
-                      <h3 className="text-3xl font-black mb-4 text-gray-900 uppercase">{item.title}</h3>
-                      <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
-                      <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
-                         View Requirements <ArrowRight className="w-4 h-4" />
-                      </div>
-                   </div>
-                </motion.div>
-              ))}
-           </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-32 px-6 bg-gray-900 text-white overflow-hidden relative">
-         <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-               <div>
-                  <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase">Your Italian Journey</h2>
-                  <div className="space-y-12">
-                     {[
-                       { title: 'University Selection', desc: 'Helping you choose the right institution among Italy\'s top universities.' },
-                       { title: 'Portfolio Guidance', desc: 'Specialized support for creative applications in arts, fashion, and design.' },
-                       { title: 'Visa Support', desc: 'Expert assistance for Italian student visa application and documentation.' }
-                     ].map((feat, i) => (
-                       <div key={i} className="flex gap-8">
-                          <div className="w-16 h-16 rounded-full bg-brand-green/20 flex items-center justify-center flex-shrink-0">
-                             <Target className="text-brand-green w-8 h-8" />
-                          </div>
-                          <div>
-                             <h4 className="text-2xl font-black mb-2 uppercase">{feat.title}</h4>
-                             <p className="text-gray-400 font-bold text-lg">{feat.desc}</p>
-                          </div>
-                       </div>
-                     ))}
-                  </div>
-               </div>
-               <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-green/10 blur-[120px]" />
-                  <div className="bg-gray-800 p-16 rounded-[60px] relative z-10 border border-white/5 shadow-2xl">
-                     <h3 className="text-4xl font-black mb-10 border-b border-white/10 pb-6 uppercase tracking-tight">Italian Study Package</h3>
-                     <ul className="grid grid-cols-1 gap-6 font-bold text-gray-300 text-xl">
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Enrollment Assistance
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Scholarship Applications
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Language Level Guidance
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Post-arrival Coordination
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 px-6 bg-brand-green text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8 uppercase">Italy?</span></h2>
-           <button 
-             onClick={openContactModal}
-             className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto uppercase"
-           >
-              Apply Now <ArrowRight className="w-8 h-8" />
-           </button>
-        </div>
-      </section>
-    </div>
-  );
+    return (
+        <CountryLayout
+            country="Italy"
+            heroImage="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=1200"
+            heroTitle="The Jewel of Italy."
+            heroSubtitle="The cradle of Art and Culture. Italy offers high-quality education with significantly lower tuition fees."
+            coursesImage="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+            requirementsImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            perks={[
+                "Lower tuition than US/UK",
+                "English-taught programs globally",
+                "Central European travel access",
+                "Scholarship opportunities at public schools"
+            ]}
+            tests={[
+                "IELTS / TOEFL (English)",
+                "CILS / CELI (Italian)"
+            ]}
+            documents={[
+                "Academic Transcripts",
+                "Valid Residence Permit",
+                "Proof of Funds",
+                "Passport"
+            ]}
+            intakes={[
+                "September (Fall Intake) - Primary",
+                "January (Spring Intake)"
+            ]}
+            workRights={[
+                "International students with a residence permit can work up to 20 hours per week.",
+                "Stay back for 6 to 12 months to seek employment after graduation.",
+                "Professional experience and high employability routes."
+            ]}
+            topCourses={[
+                { name: "Fashion Design", image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&q=80&w=800" },
+                { name: "Luxury Management", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800" },
+                { name: "Architecture", image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=800" },
+                { name: "Sustainable Engineering", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
+                { name: "Culinary Arts", image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" }
+            ]}
+            whyStudy="Italy is a masterpiece of education and history, offering specialized degrees in Arts, Fashion, and Engineering with exceptional affordability."
+            seoTitle="Study in Italy | Low Tuition & Arts | Bluestone Overseas"
+            seoDescription="Expert admissions for Italy. Get expert guidance on IELTS/TOEFL requirements, CILS details, and student visa filing with Bluestone Overseas."
+        />
+    );
 };
+
 export default Italy;

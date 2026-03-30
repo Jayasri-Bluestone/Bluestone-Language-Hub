@@ -4,6 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Globe, Shield, Sparkles, Trophy, ChevronDown, BookOpen, GraduationCap, Building2, Users, FileText, HelpCircle, Image as ImageIcon, Home as HomeIcon, Target, Menu, X } from 'lucide-react';
 import { useContactModal } from '../context/ModalContext';
 
+// Import Logos
+import ieltsLogo from '../assets/logos/ielts.png';
+import pteLogo from '../assets/logos/pte.png';
+import toeflLogo from '../assets/logos/toefl.png';
+import oetLogo from '../assets/logos/oet.png';
+import duolingoLogo from '../assets/logos/duolingo.png';
+
 const NavItem = ({ name, children, href }) => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
@@ -49,12 +56,25 @@ const NavItem = ({ name, children, href }) => {
                                     onClick={() => setIsOpen(false)}
                                     className="flex items-center gap-3 p-3 rounded-2xl hover:bg-brand-green-soft transition-colors group/item"
                                 >
-                                    <div className="w-10 h-10 rounded-xl bg-brand-green-soft flex items-center justify-center group-hover/item:bg-white transition-colors">
-                                        {item.icon && <item.icon className="w-5 h-5 text-gray-400 group-hover/item:text-brand-green transition-colors" />}
+                                    <div className="w-10 h-10 rounded-xl bg-brand-green-soft flex items-center justify-center group-hover/item:bg-white transition-all overflow-hidden relative">
+                                        {item.image ? (
+                                            <img 
+                                                src={item.image} 
+                                                alt={item.name} 
+                                                className="w-full h-full object-contain p-1.5 group-hover/item:scale-110 transition-transform" 
+                                            />
+                                        ) : item.flag ? (
+                                            <img 
+                                                src={`https://flagcdn.com/w80/${item.flag}.png`} 
+                                                alt={item.name} 
+                                                className="w-full h-full object-cover group-hover/item:scale-110 transition-transform" 
+                                            />
+                                        ) : item.icon ? (
+                                            <item.icon className="w-5 h-5 text-gray-400 group-hover/item:text-brand-green transition-colors" />
+                                        ) : null}
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <div className="text-sm font-bold text-gray-900 truncate">{item.name}</div>
-                                        <div className="text-[10px] text-gray-400 font-medium truncate">{item.desc}</div>
+                                        <div className="text-sm font-bold text-gray-900 group-hover/item:text-brand-green transition-colors">{item.name}</div>
                                     </div>
                                 </Link>
                             ))}
@@ -107,14 +127,19 @@ const MobileNavItem = ({ name, href, items, onClick }) => {
                   key={sidx}
                   to={sub.href}
                   onClick={onClick}
-                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-green-soft transition-colors"
+                  className="flex items-center gap-3 p-2 rounded-xl hover:bg-brand-green-soft transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-green-soft flex items-center justify-center">
-                    {sub.icon && <sub.icon className="w-5 h-5 text-brand-green" />}
+                  <div className="w-10 h-10 rounded-xl bg-brand-green-soft flex items-center justify-center overflow-hidden">
+                    {sub.image ? (
+                        <img src={sub.image} alt={sub.name} className="w-full h-full object-contain p-1" />
+                    ) : sub.flag ? (
+                        <img src={`https://flagcdn.com/w80/${sub.flag}.png`} alt={sub.name} className="w-full h-full object-cover" />
+                    ) : sub.icon ? (
+                        <sub.icon className="w-5 h-5 text-brand-green" />
+                    ) : null}
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-bold text-gray-700">{sub.name}</span>
-                    {sub.desc && <span className="text-[10px] text-gray-400 font-medium">{sub.desc}</span>}
                   </div>
                 </Link>
               ))}
@@ -132,17 +157,16 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const menuItems = [
-    // ... (omitting menuItems for brevity in thought, but I will include it in the tool call)
     { name: 'Home', href: '/' },
         {
       name: 'Company',
       href: '/company',
       items: [
-        { name: 'About Us', href: '/company/about', icon: Users, desc: 'Our journey & mission' },
-        { name: 'Success Stories', href: '/company/success', icon: FileText, desc: 'Hear from our alumni' },
-        { name: 'Blog', href: '/company/blog', icon: FileText, desc: 'Latest updates & tips' },
-        { name: 'Gallery', href: '/company/gallery', icon: ImageIcon, desc: 'Life at Bluestone' },
-        { name: 'FAQ', href: '/company/faq', icon: HelpCircle, desc: 'Quick answers' },
+        { name: 'About Us', href: '/company/about', icon: Users },
+        { name: 'Success Stories', href: '/company/success', icon: FileText },
+        { name: 'Blog', href: '/company/blog', icon: FileText },
+        { name: 'Gallery', href: '/company/gallery', icon: ImageIcon },
+        { name: 'FAQ', href: '/company/faq', icon: HelpCircle },
       ]
     },
 
@@ -150,12 +174,15 @@ const Navbar = () => {
       name: 'Courses',
       href: '/#courses',
       items: [
-        { name: 'IELTS', href: '/tests/ielts', icon: BookOpen, desc: 'Master all 4 modules' },
-        { name: 'PTE', href: '/tests/pte', icon: Target, desc: 'Fast-track your success' },
-        { name: 'TOEFL', href: '/tests/toefl', icon: BookOpen, desc: 'Academic excellence' },
-        { name: 'German', href: '/courses/german', icon: Globe, desc: 'Berlin to Munich' },
-        { name: 'Japanese', href: '/courses/japanese', icon: Globe, desc: 'Land of the rising sun' },
-        { name: 'French', href: '/courses/french', icon: Globe, desc: 'From Paris with love' },
+        { name: 'IELTS', href: '/tests/ielts', image: ieltsLogo },
+        { name: 'PTE', href: '/tests/pte', image: pteLogo },
+        { name: 'OET', href: '/tests/oet', image: oetLogo },
+        { name: 'TOEFL', href: '/tests/toefl', image: toeflLogo },
+        { name: 'German', href: '/courses/german', flag: 'de' },
+        { name: 'Japanese', href: '/courses/japanese', flag: 'jp' },
+        { name: 'French', href: '/courses/french', flag: 'fr' },
+        { name: 'Language SELT', href: '/courses/selt', icon: Shield },
+        { name: 'CERT', href: '/courses/cert', icon: GraduationCap },
       ]
     },
    
@@ -163,26 +190,26 @@ const Navbar = () => {
       name: 'Study Abroad',
       href: '/#aboard',
       items: [
-        { name: 'Canada', href: '/abroad/canada', icon: Globe, desc: 'Quality education & PR' },
-        { name: 'USA', href: '/abroad/usa', icon: Target, desc: 'World-class universities' },
-        { name: 'UK', href: '/abroad/uk', icon: Shield, desc: 'Short duration masters' },
-        { name: 'Australia', href: '/abroad/australia', icon: Users, desc: 'Vibrant student life' },
-        { name: 'New Zealand', href: '/abroad/new-zealand', icon: Sparkles, desc: 'Safety & Innovation' },
-        { name: 'Ireland', href: '/abroad/ireland', icon: BookOpen, desc: 'Post-study work visa' },
-        { name: 'Germany', href: '/abroad/germany', icon: Globe, desc: 'Euro powerhouse' },
-        { name: 'France', href: '/abroad/france', icon: Trophy, desc: 'Art & Management' },
-        { name: 'Singapore', href: '/abroad/singapore', icon: Globe, desc: 'Asian financial hub' },
-        { name: 'Italy', href: '/abroad/italy', icon: Target, desc: 'Design & Heritage' },
-        { name: 'Malaysia', href: '/abroad/malaysia', icon: Shield, desc: 'Affordable quality' },
-        { name: 'Sweden', href: '/abroad/sweden', icon: Users, desc: 'Sustainable future' },
-        { name: 'Netherlands', href: '/abroad/netherlands', icon: Sparkles, desc: 'Tech & Commerce' },
-        { name: 'Denmark', href: '/abroad/denmark', icon: Shield, desc: 'Innovation & Life' },
-        { name: 'Bulgaria', href: '/abroad/bulgaria', icon: Globe, desc: 'Affordable Excellence' },
-        { name: 'Russia', href: '/abroad/russia', icon: Target, desc: 'Medicine & Eng.' },
-        { name: 'Switzerland', href: '/abroad/switzerland', icon: Shield, desc: 'Hospitality & Finance' },
-        { name: 'South Korea', href: '/abroad/south-korea', icon: Sparkles, desc: 'Tech & Wave' },
-        { name: 'UAE', href: '/abroad/uae', icon: Globe, desc: 'Success & Luxury' },
-        { name: 'Philippines', href: '/abroad/philippines', icon: Target, desc: 'Affordable Med' },
+        { name: 'Canada', href: '/abroad/canada', flag: 'ca' },
+        { name: 'USA', href: '/abroad/usa', flag: 'us' },
+        { name: 'UK', href: '/abroad/uk', flag: 'gb' },
+        { name: 'Australia', href: '/abroad/australia', flag: 'au' },
+        { name: 'New Zealand', href: '/abroad/new-zealand', flag: 'nz' },
+        { name: 'Ireland', href: '/abroad/ireland', flag: 'ie' },
+        { name: 'Germany', href: '/abroad/germany', flag: 'de' },
+        { name: 'France', href: '/abroad/france', flag: 'fr' },
+        { name: 'Singapore', href: '/abroad/singapore', flag: 'sg' },
+        { name: 'Italy', href: '/abroad/italy', flag: 'it' },
+        { name: 'Malaysia', href: '/abroad/malaysia', flag: 'my' },
+        { name: 'Sweden', href: '/abroad/sweden', flag: 'se' },
+        { name: 'Netherlands', href: '/abroad/netherlands', flag: 'nl' },
+        { name: 'Denmark', href: '/abroad/denmark', flag: 'dk' },
+        { name: 'Bulgaria', href: '/abroad/bulgaria', flag: 'bg' },
+        { name: 'Russia', href: '/abroad/russia', flag: 'ru' },
+        { name: 'Switzerland', href: '/abroad/switzerland', flag: 'ch' },
+        { name: 'South Korea', href: '/abroad/south-korea', flag: 'kr' },
+        { name: 'UAE', href: '/abroad/uae', flag: 'ae' },
+        { name: 'Philippines', href: '/abroad/philippines', flag: 'ph' },
       ]
     },
 
@@ -191,11 +218,11 @@ const Navbar = () => {
       name: 'Tests',
       href: '/tests',
       items: [
-        { name: 'IELTS', href: '/tests/ielts', icon: BookOpen, desc: 'Master all 4 modules' },
-        { name: 'PTE', href: '/tests/pte', icon: GraduationCap, desc: 'Fast-track your success' },
-        { name: 'OET', href: '/tests/oet', icon: Users, desc: 'For healthcare pros' },
-        { name: 'Duolingo', href: '/tests/duolingo', icon: Globe, desc: 'The modern test' },
-        { name: 'TOEFL', href: '/tests/toefl', icon: BookOpen, desc: 'Academic excellence' },
+        { name: 'IELTS', href: '/tests/ielts', image: ieltsLogo },
+        { name: 'PTE', href: '/tests/pte', image: pteLogo },
+        { name: 'OET', href: '/tests/oet', image: oetLogo },
+        { name: 'Duolingo', href: '/tests/duolingo', image: duolingoLogo },
+        { name: 'TOEFL', href: '/tests/toefl', image: toeflLogo },
       ]
     },
     { name: 'Contact', href: '/contact' }

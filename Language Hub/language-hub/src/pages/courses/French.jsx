@@ -13,7 +13,7 @@ const French = () => {
         description="Join our elite French language program. From DELF/DALF preparation to career opportunities in France and Canada, we guide you all the way." 
       />
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=2070" 

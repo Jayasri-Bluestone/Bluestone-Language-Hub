@@ -23,26 +23,26 @@ const Abroad = () => {
     }, []);
 
     const destinations = [
-        { name: 'USA', img: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=800', link: '/abroad/usa', icon: Globe },
-        { name: 'UK', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800', link: '/abroad/uk', icon: MapPin },
-        { name: 'Canada', img: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800', link: '/abroad/canada', icon: Globe },
-        { name: 'Australia', img: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800', link: '/abroad/australia', icon: MapPin },
-        { name: 'New Zealand', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800', link: '/abroad/new-zealand', icon: Globe },
-        { name: 'Ireland', img: Ireland, link: '/abroad/ireland', icon: MapPin },
-        { name: 'Germany', img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800', link: '/abroad/germany', icon: Globe },
-        { name: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800', link: '/abroad/france', icon: MapPin },
-        { name: 'Singapore', img: Singapore, link: '/abroad/singapore', icon: Globe },
-        { name: 'Italy', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=800', link: '/abroad/italy', icon: MapPin },
-        { name: 'Malaysia', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=800', link: '/abroad/malaysia', icon: Globe },
-        { name: 'Sweden', img: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=800', link: '/abroad/sweden', icon: MapPin },
-        { name: 'Netherlands', img: Netherlands, link: '/abroad/netherlands', icon: Globe },
-        { name: 'Denmark', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=800', link: '/abroad/denmark', icon: MapPin },
-        { name: 'Bulgaria', img: Bulgaria, link: '/abroad/bulgaria', icon: Globe },
-        { name: 'Russia', img: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&q=80&w=800', link: '/abroad/russia', icon: MapPin },
-        { name: 'Switzerland', img: Switzerland, link: '/abroad/switzerland', icon: Globe },
-        { name: 'South Korea', img: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&q=80&w=800', link: '/abroad/south-korea', icon: MapPin },
-        { name: 'UAE', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800', link: '/abroad/uae', icon: Globe },
-        { name: 'Philippines', img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=800', link: '/abroad/philippines', icon: MapPin }
+        { name: 'USA', img: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=800', link: '/abroad/usa', flag: 'us' },
+        { name: 'UK', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800', link: '/abroad/uk', flag: 'gb' },
+        { name: 'Canada', img: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800', link: '/abroad/canada', flag: 'ca' },
+        { name: 'Australia', img: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800', link: '/abroad/australia', flag: 'au' },
+        { name: 'New Zealand', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800', link: '/abroad/new-zealand', flag: 'nz' },
+        { name: 'Ireland', img: Ireland, link: '/abroad/ireland', flag: 'ie' },
+        { name: 'Germany', img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800', link: '/abroad/germany', flag: 'de' },
+        { name: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800', link: '/abroad/france', flag: 'fr' },
+        { name: 'Singapore', img: Singapore, link: '/abroad/singapore', flag: 'sg' },
+        { name: 'Italy', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=800', link: '/abroad/italy', flag: 'it' },
+        { name: 'Malaysia', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=800', link: '/abroad/malaysia', flag: 'my' },
+        { name: 'Sweden', img: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=800', link: '/abroad/sweden', flag: 'se' },
+        { name: 'Netherlands', img: Netherlands, link: '/abroad/netherlands', flag: 'nl' },
+        { name: 'Denmark', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=800', link: '/abroad/denmark', flag: 'dk' },
+        { name: 'Bulgaria', img: Bulgaria, link: '/abroad/bulgaria', flag: 'bg' },
+        { name: 'Russia', img: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&q=80&w=800', link: '/abroad/russia', flag: 'ru' },
+        { name: 'Switzerland', img: Switzerland, link: '/abroad/switzerland', flag: 'ch' },
+        { name: 'South Korea', img: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&q=80&w=800', link: '/abroad/south-korea', flag: 'kr' },
+        { name: 'UAE', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800', link: '/abroad/uae', flag: 'ae' },
+        { name: 'Philippines', img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=800', link: '/abroad/philippines', flag: 'ph' }
     ];
 
     return (
@@ -106,8 +106,12 @@ const Abroad = () => {
                                     />
 
                                     {/* Icon Overlay */}
-                                    <div className="absolute top-6 left-6 md:top-8 md:left-8 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 z-10 transition-all duration-500 group-hover:bg-white group-hover:scale-110">
-                                        <dest.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:text-brand-green transition-colors" />
+                                    <div className="absolute top-6 left-6 md:top-8 md:left-8 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 z-10 transition-all duration-500 overflow-hidden group-hover:scale-110">
+                                        <img 
+                                            src={`https://flagcdn.com/w160/${dest.flag}.png`} 
+                                            alt={dest.name} 
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                                        />
                                     </div>
 
                                     {/* Content Panel */}

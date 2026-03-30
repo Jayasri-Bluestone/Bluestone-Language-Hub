@@ -8,14 +8,14 @@ const IELTS = () => {
     return (
         <div className="pt-20 bg-white">
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=2070"
-                        className="w-full h-full object-cover opacity-20 filter grayscale"
+                        className="w-full h-full object-cover opacity-50 filter grayscale"
                         alt="IELTS Hero"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+                    <div className="absolute inset-0" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
@@ -38,7 +38,7 @@ const IELTS = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="max-w-2xl mx-auto text-2xl text-gray-400 font-bold italic"
+                        className="max-w-2xl mx-auto text-2xl text-gray-800 font-bold italic"
                     >
                         "Unlock global opportunities with the world's most popular English language proficiency test."
                     </motion.p>

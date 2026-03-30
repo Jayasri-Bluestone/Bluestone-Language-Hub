@@ -39,7 +39,7 @@ const About = () => {
                             "We don't just teach languages; we prepare you for the world stage."
                         </p>
                         <p className="text-lg text-gray-500 mb-12 leading-relaxed font-medium">
-                            Bluestone Overseas was founded in 2015 with a single mission: to provide the highest quality linguistic training and consulting for students aiming to study or work abroad. With over 28,000+ students guided successfully, we are your trusted partners in global education.
+                            Bluestone Overseas was founded in 2015 with a single mission: To provide the highest quality linguistic training and consulting for students aiming to study or work abroad. With over 28,000+ students guided successfully, we are your trusted partners in global education.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

@@ -58,6 +58,8 @@ const FAQPage = lazy(() => import('./pages/company/FAQPage'));
 const GermanPage = lazy(() => import('./pages/courses/German'));
 const JapanesePage = lazy(() => import('./pages/courses/Japanese'));
 const FrenchPage = lazy(() => import('./pages/courses/French'));
+const SeltPage = lazy(() => import('./pages/courses/Selt'));
+const CertPage = lazy(() => import('./pages/courses/Cert'));
 const Contact = lazy(() => import('./components/Contact'));
 
 
@@ -112,6 +114,8 @@ function App() {
             <Route path="/courses/german" element={<GermanPage />} />
             <Route path="/courses/japanese" element={<JapanesePage />} />
             <Route path="/courses/french" element={<FrenchPage />} />
+            <Route path="/courses/selt" element={<SeltPage />} />
+            <Route path="/courses/cert" element={<CertPage />} />
 
             {/* Contact */}
             <Route path='/contact' element={<Contact />} />

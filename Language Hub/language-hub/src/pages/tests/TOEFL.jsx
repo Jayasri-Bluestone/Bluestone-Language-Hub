@@ -8,8 +8,8 @@ const TOEFL = () => {
   return (
     <div className="pt-20 bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-50">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(var(--color-brand-green)_1px,transparent_1px)] [background-size:40px_40px]" />
         </div>
         
@@ -32,7 +32,7 @@ const TOEFL = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="max-w-2xl mx-auto text-2xl text-gray-400 font-bold italic"
+            className="max-w-2xl mx-auto text-2xl text-gray-800 font-bold italic"
           >
             "The premier English-language test for university study, immigration and workers worldwide."
           </motion.p>
