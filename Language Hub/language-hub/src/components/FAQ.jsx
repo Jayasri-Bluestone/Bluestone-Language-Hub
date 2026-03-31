@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, Plus, Minus } from 'lucide-react';
+import { ChevronDown, HelpCircle, Plus, Minus, MessageCircle } from 'lucide-react';
 
 const FAQItem = ({ question, answer, i }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,9 +86,15 @@ const FAQ = () => {
           </div>
           <h4 className="text-2xl font-black mb-6 relative z-10 uppercase">Still have questions?</h4>
           <p className="text-lg opacity-80 mb-10 relative z-10 font-bold max-w-xl mx-auto">Our linguistic consultants are here to help you draft your roadmap to success.</p>
-          <button className="px-12 py-5 bg-white text-brand-green rounded-2xl text-lg font-black hover:bg-white hover:scale-105 transition-all shadow-xl active:scale-95 relative z-10">
-            Chat with an Expert
-          </button>
+          <a 
+            href="https://wa.me/919342899904" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-brand-green rounded-2xl text-lg font-black hover:bg-white hover:scale-105 transition-all shadow-xl active:scale-95 relative z-10"
+          >
+            <MessageCircle className="w-6 h-6 fill-current text-brand-green/20" />
+            Chat on WhatsApp
+          </a>
         </motion.div>
       </div>
     </section>

@@ -50,7 +50,7 @@ const PhilippinesPage = lazy(() => import('./pages/abroad/Philippines'));
 // Company
 const AboutUsPage = lazy(() => import('./pages/company/AboutUsPage'));
 const SuccessStories = lazy(() => import('./pages/company/SuccessStories'));
-const Blog = lazy(() => import('./pages/company/Blog'));
+//const Blog = lazy(() => import('./pages/company/Blog'));
 const Gallery = lazy(() => import('./pages/company/Gallery'));
 const FAQPage = lazy(() => import('./pages/company/FAQPage'));
  
@@ -106,7 +106,7 @@ function App() {
             {/* Company */}
             <Route path="/company/about" element={<AboutUsPage />} />
             <Route path="/company/success" element={<SuccessStories />} />
-            <Route path="/company/blog" element={<Blog />} />
+            {/* <Route path="/company/blog" element={<Blog />} /> */}
             <Route path="/company/gallery" element={<Gallery />} />
             <Route path="/company/faq" element={<FAQPage />} />
    

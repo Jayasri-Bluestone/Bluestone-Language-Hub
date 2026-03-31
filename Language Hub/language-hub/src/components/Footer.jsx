@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Youtube, ArrowRight, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
+import { Globe, Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Youtube, ArrowRight, MessageCircle, Send, CheckCircle2, Map } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -134,16 +134,16 @@ const Footer = () => {
 
                     {/* Contact & Newsletter Column */}
                     <div className="lg:col-span-3">
-                        <h4 className="text-xs font-black uppercase tracking-[0.5em] text-brand-green mb-10">Get In Touch</h4>
+                        <h4 className="text-xs font-black uppercase tracking-[0.5em] text-brand-green mb-8">Get In Touch</h4>
                         <div className="space-y-10">
                             <ul className="space-y-8 text-gray-400 font-bold">
-                                <li className="flex gap-4 group cursor-pointer" onClick={() => window.open('https://wa.me/919876543210')}>
+                                <li className="flex gap-4 group cursor-pointer" onClick={() => window.open('https://wa.me/919342899904')}>
                                     <div className="w-11 h-11 rounded-2xl bg-brand-green/5 flex items-center justify-center flex-shrink-0 border border-white/5 group-hover:bg-brand-green transition-colors">
                                         <MessageCircle className="w-5 h-5 text-brand-green group-hover:text-white" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs text-gray-600 uppercase tracking-widest leading-none mb-1">WhatsApp Chat</span>
-                                        <span className="text-sm font-black text-gray-200">+91 98765 43210</span>
+                                        <span className="text-sm font-black text-gray-200">+91 93428 99904</span>
                                     </div>
                                 </li>
                                 <li className="flex gap-4 group">
@@ -154,6 +154,21 @@ const Footer = () => {
                                         <span className="text-xs text-gray-600 uppercase tracking-widest leading-none mb-1">Admissions</span>
                                         <span className="text-sm font-black text-gray-200">admissions@bluestonehub.com</span>
                                     </div>
+                                </li>
+                                <li className="flex gap-4 group">
+                                    <div className="w-11 h-11 rounded-2xl bg-brand-green/5 flex items-center justify-center flex-shrink-0 border border-white/5 group-hover:bg-brand-green transition-colors">
+                                        <MapPin className="w-5 h-5 text-brand-green group-hover:text-white" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xs text-gray-600 uppercase tracking-widest leading-none mb-1">Address</span>
+ <a
+                            href="https://www.google.com/maps/search/?api=1&query=Renaissance+Terrace+NO.126L+2nd+floor+Opp+Bishop+Appasamy+College+Coimbatore+641018"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-black text-gray-200"
+                          >
+                            Renaissance Terrace, NO.126L, 2nd floor, Opp. Bishop Appasamy College, Coimbatore - 641018.
+                          </a>                                    </div>
                                 </li>
                             </ul>
 

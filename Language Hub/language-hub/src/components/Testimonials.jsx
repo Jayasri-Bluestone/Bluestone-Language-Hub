@@ -4,9 +4,9 @@ import { Star, Quote } from 'lucide-react';
 
 const Testimonials = () => {
    const reviews = [
-      { name: 'Sarah Jenkins', score: 'IELTS 8.5', text: 'The coaching at Bluestone was phenomenal. The tutors really focus on your weak spots and help you improve rapidly.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150' },
-      { name: 'Rahul Sharma', score: 'PTE 79+', text: 'I tried other coaching centers but Bluestone truly provides the best practice tests and feedback. Highly recommended!', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150' },
-      { name: 'Elena Petrova', score: 'Study in Canada', text: 'They handled my entire admission and visa process seamlessly. I am currently studying at UBC thanks to Bluestone.', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
+      { name: 'Arpita', score: 'IELTS 8', text: 'I joined Bluestone Language Hub feeling overwhelmed by IELTS Writing and Speaking, scoring only 5.5 initially. Kiruthika mam targeted mock tests and personalized feedback transformed my approach—her tips on paraphrasing and fluency helped me secure 8 overall (L8, R7.5, W7.5, S7). Grateful for the confidence boost!', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150' },
+      { name: 'Yoganandhan', score: 'IELTS 7.5', text: 'Coming from a non-English background in Coimbatore, I needed 7+ for migration. Kiruthikas grammar modules and speaking practice built my foundation, leading to 7.5 (L8, R7.5, W7, S7). The supportive environment felt like family!', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150' },
+      { name: 'Ram', score: 'IELTS 7.5', text: 'IELTS Listening was my weak spot at 6.0, but after Kiruthika mam accent-training audio drills and weekly reviews at Bluestone Language Hub, I hit 8.0 there and 7.5 overall (L8, R7.5, W7, S7). Her motivation kept me going—perfect for ambitious goals!', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
    ];
 
    return (
@@ -67,7 +67,7 @@ const Testimonials = () => {
                         </div>
                      </div>
 
-                     <p className="text-xl text-gray-500 font-bold leading-relaxed relative z-10 italic">
+                     <p className="text-md text-gray-500 font-bold leading-relaxed relative z-10 italic">
                         "{review.text}"
                      </p>
 

@@ -1,143 +1,49 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Globe, ShieldCheck, Target, ArrowRight, BookOpen } from 'lucide-react';
-import SEO from '../../components/SEO';
-import { useContactModal } from '../../context/ModalContext';
+import CountryLayout from '../../components/abroad/CountryLayout';
 
 const Philippines = () => {
-  const { openContactModal } = useContactModal();
-  return (
-    <div className="pt-20 bg-white">
-      <SEO title="Study in Philippines | Affordable Medical Education | Bluestone Overseas" description="Affordable and high-quality education in the heart of Southeast Asia. Expert guidance for Philippines admissions." />
-      
-      {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 text-balance">
-          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover brightness-50" alt="Philippines" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-green/40" />
-        </div>
-        <div className="container mx-auto px-6 relative z-10 text-center text-white p-6">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md mb-8 border border-white/30"
-          >
-            <Globe className="w-5 h-5 text-white" />
-            <span className="text-sm font-black uppercase tracking-widest text-white">Study in Philippines</span>
-          </motion.div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            className="text-5xl md:text-5xl font-black leading-tight tracking-tighter mb-8 uppercase"
-          >
-            AFFORDABLE <br /> <span className="text-white opacity-80 decoration-brand-green underline underline-offset-8 uppercase">EDUCATION.</span>
-          </motion.h1>
-          <p className="max-w-2xl mx-auto text-2xl font-bold italic opacity-90 px-4">
-             "Study in the heart of Southeast Asia. Achieve your career goals with globally recognized medical and professional education at highly competitive costs."
-          </p>
-        </div>
-      </section>
-
-      {/* Benefits Grid */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto">
-           <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 leading-tight uppercase">Why Study in the Philippines?</h2>
-              <p className="text-xl text-gray-400 font-bold max-w-2xl mx-auto">Discover high-quality education and a welcoming community in the heart of the Pacific.</p>
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {[
-                { title: 'Affordable Clinical Training', desc: 'World-class medical programs with extensive practical training at a fraction of the cost.', img: 'https://images.unsplash.com/photo-1576091160550-217359f48f60?auto=format&fit=crop&q=80&w=600' },
-                { title: 'English-Speaking Nation', desc: 'One of the largest English-speaking populations in Asia, making it easy to live and study.', img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=600' },
-                { title: 'US-Based Curriculum', desc: 'Many medical universities follow a US-based academic curriculum, simplifying global licensing exams.', img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=600' }
-              ].map((item, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ y: -20 }}
-                  className="rounded-[60px] overflow-hidden bg-gray-50 border border-gray-100 group shadow-xl"
-                >
-                   <div className="h-72 overflow-hidden">
-                      <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                   </div>
-                   <div className="p-12">
-                      <h3 className="text-3xl font-black mb-4 text-gray-900 leading-tight uppercase">{item.title}</h3>
-                      <p className="text-gray-500 font-bold mb-8 leading-relaxed">{item.desc}</p>
-                      <div className="flex items-center gap-2 text-brand-green font-black uppercase tracking-widest text-sm">
-                         View Requirements <ArrowRight className="w-4 h-4" />
-                      </div>
-                   </div>
-                </motion.div>
-              ))}
-           </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-32 px-6 bg-gray-900 text-white overflow-hidden relative">
-         <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-               <div>
-                  <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter leading-tight uppercase">Your Philippine Journey</h2>
-                  <div className="space-y-12">
-                     {[
-                       { title: 'Medical Admissions', desc: 'Expert guidance for securing seats in top Philippine medical and dental colleges.' },
-                       { title: 'NMAT Coordination', desc: 'Support for the mandatory National Medical Admission Test and application strategy.' },
-                       { title: 'Visa Filing Support', desc: 'Comprehensive assistance with your 9(f) student visa and documentation.' }
-                     ].map((feat, i) => (
-                       <div key={i} className="flex gap-8">
-                          <div className="w-16 h-16 rounded-full bg-brand-green/20 flex items-center justify-center flex-shrink-0">
-                             <Target className="text-brand-green w-8 h-8" />
-                          </div>
-                          <div>
-                             <h4 className="text-2xl font-black mb-2 uppercase">{feat.title}</h4>
-                             <p className="text-gray-400 font-bold text-lg">{feat.desc}</p>
-                          </div>
-                       </div>
-                     ))}
-                  </div>
-               </div>
-               <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-green/10 blur-[120px]" />
-                  <div className="bg-gray-800 p-16 rounded-[60px] relative z-10 border border-white/5 shadow-2xl">
-                     <h3 className="text-4xl font-black mb-10 border-b border-white/10 pb-6 uppercase tracking-tight">Philippine Package</h3>
-                     <ul className="grid grid-cols-1 gap-6 font-bold text-gray-300 text-xl">
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Admission Strategy
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Document Legalization
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Visa Filing & Support
-                        </li>
-                        <li className="flex items-center gap-4">
-                           <div className="w-3 h-3 rounded-full bg-brand-green" />
-                           Arrival & Housing Support
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 px-6 bg-brand-green text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-           <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter text-balance uppercase">Ready to study in <br /><span className="opacity-80 underline underline-offset-8 uppercase">Philippines?</span></h2>
-           <button 
-             onClick={openContactModal}
-             className="px-16 py-8 bg-white text-brand-green rounded-full text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-4 mx-auto uppercase"
-           >
-              Apply Now <ArrowRight className="w-8 h-8" />
-           </button>
-        </div>
-      </section>
-    </div>
-  );
+    return (
+        <CountryLayout
+            country="Philippines"
+            heroImage="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=2070"
+            heroTitle="The Gateway to Health."
+            heroSubtitle="The most affordable destination for elite medical and nursing education in Asia."
+            coursesImage="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=1200"
+            requirementsImage="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&q=80&w=1200"
+            perks={[
+                "Low tuition fees & living",
+                "High value for money (MBBS focus)",
+                "English-speaking environment",
+                "Globally recognized medical degrees"
+            ]}
+            tests={["IELTS/TOEFL/PTE", "SAT/ACT/GRE/GMAT"]}
+            documents={[
+                "Academic Transcripts",
+                "Passport copy",
+                "National Medical Admission Test (NMAT)",
+                "Police Clearance Certificate"
+            ]}
+            intakes={[
+                "June/July - Primary Intake",
+                "November/December - Secondary Intake"
+            ]}
+            workRights={[
+                "Authorization needed for external work.",
+                "Primary focus on research or on-campus support.",
+                "Affordable medical programs from 2.5–5 lakhs per year."
+            ]}
+            topCourses={[
+                { name: "Medicine (MD/MBBS)", image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=800" },
+                { name: "Nursing", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800" },
+                { name: "Engineering", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
+                { name: "Information Technology (IT)", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" },
+                { name: "Business Administration", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" }
+            ]}
+            whyStudy="With MBBS programs costing significantly less than other international destinations, the Philippines provides a premium English-speaking environment for future medical professionals."
+            seoTitle="Study in the Philippines | Affordable Medical Degrees | Bluestone Overseas"
+            seoDescription="Your gateway to medical excellence. Get English-medium healthcare degrees in the Philippines with expert admission guidance from Bluestone Overseas."
+        />
+    );
 };
+
 export default Philippines;

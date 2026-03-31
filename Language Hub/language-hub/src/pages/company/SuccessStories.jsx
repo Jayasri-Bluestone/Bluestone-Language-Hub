@@ -1,39 +1,46 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Eye, X, Award, CheckCircle } from 'lucide-react';
+import { Star, Eye, X, Award, CheckCircle, FileText } from 'lucide-react';
 
 // Import Certificate Placeholders
-import arpitaCert from '../../assets/certificates/arpita_ielts.png';
-import shyamCert from '../../assets/certificates/shyam_pte.png';
-import varunCert from '../../assets/certificates/varun_oet.png';
+import Sujith from '../../assets/certificates/sujith.pdf';
+import Yog from '../../assets/certificates/yog.pdf';
+import Pranav from '../../assets/certificates/pranav.PDF';
+
+// Import Certificate Thumbnails
+import YogThumb from '../../assets/certificates/yoganandhan_thumb.png';
+import SujithThumb from '../../assets/certificates/sujith_thumb.png';
+import PranavThumb from '../../assets/certificates/pranav_thumb.png';
 
 const SuccessStories = () => {
   const [selectedCert, setSelectedCert] = useState(null);
 
+  const isPDF = (url) => url?.toLowerCase().endsWith('.pdf');
+
   const stories = [
     { 
-      name: 'Arpita', 
-      result: 'IELTS 8.5', 
-      uni: 'Oxford University', 
-      text: '"I joined Bluestone Language Hub feeling overwhelmed by IELTS Writing and Speaking, scoring only 5.5 initially. Kiruthika mams targeted mock tests and personalized feedback transformed my approach—her tips on paraphrasing and fluency helped me secure 8 overall (L8, R7.5, W7.5, S7). Grateful for the confidence boost!"', 
+      name: 'Yoganandhan', 
+      result: 'IELTS 7.5', 
+      text: '"Coming from a non-English background in Coimbatore, I needed 7+ for migration. Kiruthiks grammar modules and speaking practice built my foundation, leading to 7.5 (L8, R7.5, W7, S7). The supportive environment felt like family!"', 
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
-      cert: arpitaCert
+      cert: Yog,
+      thumb: YogThumb
     },
     { 
-      name: 'Shyam', 
-      result: 'PTE 82', 
-      uni: 'University of Toronto', 
-      text: '"Struggling with Reading speed, I aimed for 7+ for my study abroad dreams. The structured workshops at Kideon Edutech, especially Kiruthika vocabulary drills and time-management strategies, got me to 7.5 (L7.5, R8, W7, S7). First-attempt success—highly recommend!"', 
+      name: 'Sujith', 
+      result: 'IELTS 7.5', 
+      text: '"Struggling with Reading speed, I aimed for 7+ for my study abroad dreams. The structured workshops at Kideon Edutech, especially Kiruthikas vocabulary drills and time-management strategies, got me to 7.5 (L7.5, R8, W7, S7). First-attempt success—highly recommend!"', 
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
-      cert: shyamCert
+      cert: Sujith,
+      thumb: SujithThumb
     },
     { 
-      name: 'Varun', 
-      result: 'OET Grade A', 
-      uni: 'NHS UK', 
-      text: '"As a working professional, balancing IELTS prep was tough, but Kiruthika mam flexible online sessions and real-exam simulations made it possible. From 6.0 to 7.0 overall (L7, R7, W7, S7), her focus on task response was game-changing. Thank you!"', 
+      name: 'Pranav', 
+      result: 'IELTS 7', 
+      text: '"As a working professional, balancing IELTS prep was tough, but Kiruthika mams flexible online sessions and real-exam simulations made it possible. From 6.0 to 7.0 overall (L7, R7, W7, S7), her focus on task response was game-changing. Thank you!"', 
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2',
-      cert: varunCert
+      cert: Pranav,
+      thumb: PranavThumb
     },
   ];
 
@@ -71,16 +78,25 @@ const SuccessStories = () => {
                         </div>
                      </div>
                      <h3 className="text-3xl font-black text-gray-900 mb-2 uppercase">{story.name}</h3>
-                     <div className="text-2xl font-black text-brand-green mb-8">{story.result} • {story.uni}</div>
-                     <p className="text-2xl text-gray-500 font-bold leading-relaxed italic mb-12">
-                        "{story.text}"
+                     <div className="text-2xl font-black text-brand-green mb-8">{story.result}</div>
+                     <p className="text-lg text-gray-500 font-bold leading-relaxed italic mb-12">
+                        {story.text}
                      </p>
 
                      {/* Certificate Preview Section */}
-                     <div className="flex flex-col sm:flex-row items-center gap-8 p-6 bg-white rounded-[40px] border border-gray-100 shadow-xl shadow-gray-200/50">
+                      <div className="flex flex-col sm:flex-row items-center gap-8 p-6 bg-white rounded-[40px] border border-gray-100 shadow-xl shadow-gray-200/50 text-center sm:text-left">
                         <div className="relative group/cert w-40 h-28 flex-shrink-0 cursor-pointer" onClick={() => setSelectedCert(story.cert)}>
                            <div className="absolute inset-0 bg-brand-green/20 rounded-2xl blur-xl group-hover/cert:blur-2xl transition-all" />
-                           <img src={story.cert} className="w-full h-full object-cover rounded-2xl border-2 border-white relative z-10 transition-transform group-hover/cert:scale-105" alt="Certificate Thumbnail" />
+                           {story.thumb ? (
+                              <img src={story.thumb} className="w-full h-full object-cover rounded-2xl border-2 border-white relative z-10 transition-transform group-hover/cert:scale-105" alt="Certificate Cover" />
+                           ) : isPDF(story.cert) ? (
+                              <div className="w-full h-full bg-brand-green-soft rounded-2xl border-2 border-white relative z-10 flex flex-col items-center justify-center gap-2 text-brand-green">
+                                 <FileText className="w-10 h-10" />
+                                 <span className="text-[10px] font-black uppercase tracking-widest">View PDF</span>
+                              </div>
+                           ) : (
+                              <img src={story.cert} className="w-full h-full object-cover rounded-2xl border-2 border-white relative z-10 transition-transform group-hover/cert:scale-105" alt="Certificate Thumbnail" />
+                           )}
                            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover/cert:opacity-100 transition-opacity bg-black/20 rounded-2xl">
                               <Eye className="text-white w-8 h-8" />
                            </div>
@@ -125,10 +141,18 @@ const SuccessStories = () => {
                   animate={{ scale: 1, opacity: 1, rotateX: 0 }}
                   exit={{ scale: 0.9, opacity: 0, rotateX: 20 }}
                   transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                  className="relative max-w-5xl w-full h-full bg-white rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl shadow-black/50 border-8 border-white/20"
+                  className="relative max-w-5xl w-full h-[90vh] bg-white rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl shadow-black/50 border-8 border-white/20"
                   onClick={(e) => e.stopPropagation()}
                >
-                  <img src={selectedCert} className="w-full h-full object-contain bg-white" alt="Full Certificate View" />
+                  {isPDF(selectedCert) ? (
+                     <iframe 
+                        src={`${selectedCert}#toolbar=0&navpanes=0`} 
+                        className="w-full h-full border-none" 
+                        title="Certificate PDF"
+                     />
+                  ) : (
+                     <img src={selectedCert} className="w-full h-full object-contain bg-white" alt="Full Certificate View" />
+                  )}
                   
                   {/* Subtle info overlay */}
                   <div className="absolute bottom-8 left-12 right-12 flex justify-between items-center text-gray-900/40 pointer-events-none">

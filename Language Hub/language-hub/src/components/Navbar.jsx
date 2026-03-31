@@ -27,6 +27,7 @@ const NavItem = ({ name, children, href }) => {
   }
 
     const isLarge = children && children.length > 6;
+    const isMega = children && children.length > 12;
 
   return (
     <div
@@ -38,7 +39,7 @@ const NavItem = ({ name, children, href }) => {
         {name}
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-
+ 
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -46,9 +47,9 @@ const NavItem = ({ name, children, href }) => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 15, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className={`absolute top-full left-0 mt-4 p-4 bg-white/95 backdrop-blur-xl border border-brand-green/10 rounded-3xl shadow-2xl z-50 ${isLarge ? 'w-[520px] max-h-[80vh] overflow-y-auto custom-scrollbar' : 'w-72'}`}
+                        className={`absolute top-full mt-4 p-5 bg-white/95 backdrop-blur-xl border border-brand-green/10 rounded-[32px] shadow-2xl z-50 ${isMega ? 'w-[780px] left-1/2 -translate-x-1/2' : isLarge ? 'w-[520px] left-1/2 -translate-x-1/2' : 'w-72 left-0'} ${isLarge ? 'max-h-[85vh] overflow-y-auto custom-scrollbar' : ''}`}
                     >
-                        <div className={`grid gap-2 ${isLarge ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                        <div className={`grid gap-2 ${isMega ? 'grid-cols-3' : isLarge ? 'grid-cols-2' : 'grid-cols-1'}`}>
                             {children.map((item, idx) => (
                                 <Link
                                     key={idx}
@@ -164,7 +165,7 @@ const Navbar = () => {
       items: [
         { name: 'About Us', href: '/company/about', icon: Users },
         { name: 'Success Stories', href: '/company/success', icon: FileText },
-        { name: 'Blog', href: '/company/blog', icon: FileText },
+        // { name: 'Blog', href: '/company/blog', icon: FileText },
         { name: 'Gallery', href: '/company/gallery', icon: ImageIcon },
         { name: 'FAQ', href: '/company/faq', icon: HelpCircle },
       ]
