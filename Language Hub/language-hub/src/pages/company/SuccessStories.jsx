@@ -11,7 +11,7 @@ import ShyamPortrait from '../../assets/candidates/shyam.png';
 import VarunPortrait from '../../assets/candidates/varun.png';
 
 // Import Full Certificates (for Preview)
-import ArpitaCert from '../../assets/certificates/arpita_ielts.png';
+import ArpitaCert from '../../assets/certificates/arpitacert.jpg';
 import ShyamCert from '../../assets/certificates/shyam_pte.png';
 import VarunCert from '../../assets/certificates/varun_oet.png';
 import Sujith from '../../assets/certificates/sujith.pdf';
