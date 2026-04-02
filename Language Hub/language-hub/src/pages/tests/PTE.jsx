@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Cpu, GraduationCap, ArrowRight, ShieldCheck, Microscope } from 'lucide-react';
+import { Zap, Cpu, GraduationCap, ArrowRight, ShieldCheck, Microscope, Quote, Star } from 'lucide-react';
 import { useContactModal } from '../../context/ModalContext';
+
+// Import Shyam's portrait
+import ShyamPortrait from '../../assets/candidates/shyam.png';
 
 const PTE = () => {
     const { openContactModal } = useContactModal();
@@ -84,6 +87,31 @@ const PTE = () => {
                         >
                             Enroll now <ArrowRight className="w-8 h-8" />
                         </button>
+                    </div>
+                </div>
+            </section>
+            {/* Testimonial Section */}
+            <section className="py-20 md:py-32 bg-white px-6">
+                <div className="container mx-auto">
+                    <div className="max-w-5xl mx-auto rounded-[40px] md:rounded-[64px] bg-brand-green-soft border border-brand-green/10 overflow-hidden shadow-2xl flex flex-col md:flex-row items-center translate-y-[-50px]">
+                        <div className="w-full md:w-2/3 p-10 md:p-20">
+                            <Quote className="w-12 h-12 md:w-16 md:h-16 text-brand-green/20 mb-8" />
+                            <h3 className="text-3xl font-black text-gray-900 mb-6 uppercase tracking-tight leading-none">AI-Powered Success <br /> <span className="text-brand-green font-black">For The AI Test.</span></h3>
+                            <p className="text-lg text-gray-500 font-bold leading-relaxed italic mb-10">
+                                "Bluestone template-based approach for PTE was a life-saver. The mock portal and AI scoring feedback helped me identify my weak spots and reach 79+ within 3 weeks of training. Highly recommended for fast-track results!"
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-1">
+                                    {[...Array(5)].map((_, i) => <Star key={i} className="text-amber-500 w-4 h-4 fill-current" />)}
+                                </div>
+                                <span className="text-sm font-black text-gray-900 uppercase tracking-widest">— Shyam, PTE 79+</span>
+                            </div>
+                        </div>
+                        <div className="w-full md:w-1/3 p-10 flex justify-center">
+                            <div className="w-40 h-40 md:w-48 md:h-48 rounded-[32px] overflow-hidden border-8 border-white shadow-2xl skew-x-[-2deg] hover:skew-x-0 transition-transform duration-500">
+                                <img src={ShyamPortrait} className="w-full h-full object-cover" alt="Shyam PTE" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

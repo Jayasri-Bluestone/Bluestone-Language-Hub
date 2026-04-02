@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import gallery3 from '../assets/gallery2.png';
 import { GraduationCap, Award, Target, BookOpen } from 'lucide-react';
 
 const About = () => {
@@ -13,10 +14,10 @@ const About = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="absolute inset-0 bg-brand-green/5 rounded-[60px] blur-3xl transform -rotate-3" />
+                        <div className="absolute inset-0 rounded-[60px] blur-3xl transform -rotate-3" />
                         <div className="relative rounded-3xl md:rounded-[64px] overflow-hidden border border-brand-green/10 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover aspect-[4/5]" alt="About Bluestone" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 to-transparent flex items-end p-8 md:p-12">
+                            <img src={gallery3} className="w-full h-full object-cover" alt="About Bluestone" />
+                            <div className="absolute inset-0 flex items-end p-8 md:p-12">
                                 <div className="text-white">
                                     <div className="text-3xl md:text-5xl font-black mb-2 tracking-tighter">2015</div>
                                     <div className="text-xs font-black uppercase tracking-widest opacity-80">Founded to Empower Students</div>

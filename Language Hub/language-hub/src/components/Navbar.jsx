@@ -10,6 +10,7 @@ import pteLogo from '../assets/logos/pte.png';
 import toeflLogo from '../assets/logos/toefl.png';
 import oetLogo from '../assets/logos/oet.png';
 import duolingoLogo from '../assets/logos/duolingo.png';
+import languageCertLogo from '../assets/logos/cert selt.png';
 
 const NavItem = ({ name, children, href }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -182,8 +183,7 @@ const Navbar = () => {
         { name: 'German', href: '/courses/german', flag: 'de' },
         { name: 'Japanese', href: '/courses/japanese', flag: 'jp' },
         { name: 'French', href: '/courses/french', flag: 'fr' },
-        { name: 'Language SELT', href: '/courses/selt', icon: Shield },
-        { name: 'CERT', href: '/courses/cert', icon: GraduationCap },
+        { name: 'Language Cert SELT', href: '/courses/language-cert-selt', image: languageCertLogo },
       ]
     },
    
@@ -234,39 +234,43 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-8 py-4 bg-white/40 backdrop-blur-xl border-b border-white/20"
+        className="fixed top-0 left-0 right-0 z-[100] bg-white/40 backdrop-blur-xl border-b border-white/20"
       >
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-green-gradient rounded-lg flex items-center justify-center shadow-lg">
-            <Globe className="text-white w-5 h-5 md:w-6 md:h-6" />
-          </div>
-          <span className="text-lg md:text-xl font-bold text-gray-900 tracking-tight">
-            Bluestone <span className="text-brand-green">Language Hub</span>
-          </span>
-        </Link>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-green-gradient rounded-lg flex items-center justify-center shadow-lg transform active:scale-95 transition-transform">
+              <Globe className="text-white w-5 h-5 md:w-6 md:h-6" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="text-base md:text-xl font-bold text-gray-900 tracking-tight">
+                Bluestone <span className="text-brand-green">Language Hub</span>
+              </span>
+            </div>
+          </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {menuItems.map((item) => (
-            <NavItem key={item.name} name={item.name} href={item.href}>
-              {item.items}
-            </NavItem>
-          ))}
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            {menuItems.map((item) => (
+              <NavItem key={item.name} name={item.name} href={item.href}>
+                {item.items}
+              </NavItem>
+            ))}
+            <button
+              onClick={openContactModal}
+              className="ml-2 lg:ml-4 px-6 py-2.5 bg-brand-green text-white rounded-full font-bold hover:bg-brand-green-light transition-all shadow-lg shadow-brand-green/20 active:scale-95"
+            >
+              Get Started
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            onClick={openContactModal}
-            className="ml-4 px-6 py-2.5 bg-brand-green text-white rounded-full font-bold hover:bg-brand-green-light transition-all shadow-lg shadow-brand-green/20 active:scale-95 leading-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-gray-700 hover:text-brand-green transition-colors"
           >
-            Get Started
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-gray-700 hover:text-brand-green transition-colors"
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </motion.nav>
 
       {/* Mobile Menu Drawer - Outside nav for perfect visibility */}

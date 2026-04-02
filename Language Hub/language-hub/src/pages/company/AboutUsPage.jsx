@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, Globe } from 'lucide-react';
+import gallery4 from '../../assets/gallery4.png';
+
 
 const AboutUsPage = () => {
     return (
@@ -25,7 +27,7 @@ const AboutUsPage = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div className="rounded-[64px] overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover" alt="Our Team" />
+                            <img src={gallery4} className="w-full h-full object-cover" alt="Our Team" />
                         </div>
                         <div>
                             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 leading-tight uppercase">Driven by Excellence, <br /> Defined by Success.</h2>
