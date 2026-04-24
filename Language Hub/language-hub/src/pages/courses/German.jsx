@@ -9,8 +9,9 @@ const German = () => {
   return (
     <div className="pt-20 bg-white">
       <SEO 
-        title="German Language Course | Bluestone Language Hub" 
-        description="Master the German language with our expert-led courses. From A1 to C2 levels, we prepare you for life in Germany." 
+        title="German Language Course in Coimbatore | A1 to C2 Levels" 
+        description="Master the German language with expert-led courses in Coimbatore. From A1 to C2 levels, we provide Goethe-Institut exam preparation and job assistance for Germany." 
+        canonical="/courses/german"
       />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">

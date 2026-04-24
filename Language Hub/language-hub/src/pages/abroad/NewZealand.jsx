@@ -40,8 +40,8 @@ const NewZealand = () => {
                 { name: "Business Administration (MBA)", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" }
             ]}
             whyStudy="New Zealand offers a unique education system that encourages innovation and critical thinking, all within a safe and incredibly scenic environment."
-            seoTitle="Study in New Zealand | Admissions & Visa | Bluestone Overseas"
-            seoDescription="Your gateway to New Zealand education. Get expert guidance on student visas, medical requirements, and top university admissions with Bluestone Overseas."
+            seoTitle="Study in New Zealand | Level 7 & 8 Programs | Green List"
+            seoDescription="Explore education in New Zealand. Expert advice on Level 7/8/9 programs, Green List occupations, and post-study work rights with Bluestone Overseas."
         />
     );
 };

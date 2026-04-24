@@ -42,8 +42,8 @@ const USA = () => {
                 { name: "Healthcare", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" }
             ]}
             whyStudy="The USA remains the global leader in higher education, offering unparalleled resources, flexibility, and career acceleration for international students."
-            seoTitle="Study in USA | Top Universities & Scholarships | Bluestone Overseas"
-            seoDescription="Experience the American dream. From Ivy League to STEM programs, Bluestone Overseas provides expert guidance for F1 visa and university admissions."
+            seoTitle="Study in USA | Ivy League & STEM Careers Guidance"
+            seoDescription="Achieve your American dream. Expert counseling for US university admissions, F1 visas, and scholarships at top-tier institutions."
         />
     );
 };

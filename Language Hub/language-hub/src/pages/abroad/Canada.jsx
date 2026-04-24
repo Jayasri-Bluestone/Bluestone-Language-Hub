@@ -41,8 +41,8 @@ const Canada = () => {
                 { name: "Data Analytics", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f" }
             ]}
             whyStudy="Canada is ranked as one of the best countries for quality of life, offering a stable economy and a high standard of education for international students."
-            seoTitle="Study in Canada | PGWP & Permanent Residency | Bluestone Overseas"
-            seoDescription="Your gateway to Canada education. Get expert guidance on student visas, proof of funds, and top university admissions with Bluestone Overseas."
+            seoTitle="Study in Canada | PGWP & Permanent Residency Guidance"
+            seoDescription="Your gateway to Canada education. Get expert guidance on student visas (SDS), PGWP, and top university admissions with Bluestone Overseas."
         />
     );
 };

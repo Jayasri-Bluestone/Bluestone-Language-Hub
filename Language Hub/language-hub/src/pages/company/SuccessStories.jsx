@@ -23,6 +23,8 @@ import YogThumb from '../../assets/certificates/yoganandhan_thumb.png';
 import SujithThumb from '../../assets/certificates/sujith_thumb.png';
 import PranavThumb from '../../assets/certificates/pranav_thumb.png';
 
+import SEO from '../../components/SEO';
+
 const SuccessStories = () => {
    const [selectedCert, setSelectedCert] = useState(null);
 
@@ -68,6 +70,11 @@ const SuccessStories = () => {
 
    return (
       <div className="pt-20 bg-white">
+         <SEO 
+            title="Success Stories & Hall of Fame" 
+            description="Real stories of excellence. See how Bluestone Language Hub helped students achieve 8+ IELTS bands and secure global university admissions."
+            canonical="/company/success"
+         />
          <section className="py-16 px-6">
             <div className="container mx-auto">
                <div className="text-center mb-24">

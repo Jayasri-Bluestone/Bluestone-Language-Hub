@@ -9,8 +9,9 @@ const French = () => {
   return (
     <div className="pt-20 bg-white">
       <SEO 
-        title="Master French Language | A1 to C2 | Bluestone Language Hub" 
-        description="Join our elite French language program. From DELF/DALF preparation to career opportunities in France and Canada, we guide you all the way." 
+        title="French Language Course in Coimbatore | DELF & DALF Prep" 
+        description="Join our elite French language program in Coimbatore. From DELF/DALF preparation to TEF Canada and TCF Quebec, we guide you through all CEFR levels (A1 to C2)." 
+        canonical="/courses/french"
       />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">

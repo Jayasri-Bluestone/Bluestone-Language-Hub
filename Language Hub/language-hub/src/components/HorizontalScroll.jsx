@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import excellenceImg from '../assets/excellence.png';
-import globalImg from '../assets/global.png';
-import supportImg from '../assets/support.png';
+import excellenceImg from '../assets/IMG_8592.jpg';
+import globalImg from '../assets/IMG_8622.jpg';
+import supportImg from '../assets/IMG_8594.jpg';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useContactModal } from '../context/ModalContext';
@@ -43,7 +43,7 @@ const HorizontalScroll = () => {
                             <span className="text-gradient">FUTURES.</span>
                         </h2>
                         <p className="mt-8 md:mt-16 text-xl md:text-2xl text-gray-400 max-w-2xl font-bold leading-relaxed mx-auto md:mx-0">
-                            Scroll to explore the pillars of Bluestone Language Hub. We don't just teach languages; <br/> <span className="text-gray-900 italic underline decoration-brand-green/30 underline-offset-8">we bridge worlds.</span>
+                            Scroll to explore the pillars of Bluestone Language Hub. We don't just teach languages; <br /> <span className="text-gray-900 italic underline decoration-brand-green/30 underline-offset-8">we bridge worlds.</span>
                         </p>
                     </div>
                     {/* Feature Cards */}

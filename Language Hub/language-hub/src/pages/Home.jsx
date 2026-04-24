@@ -10,9 +10,16 @@ import Contact from '../components/Contact';
 import Aboard from '../components/Aboard';
 import CoursesScroll from '../components/CoursesScroll';
 
+import SEO from '../components/SEO';
+
 const Home = () => {
   return (
     <main>
+      <SEO 
+        title="Elite IELTS, PTE & OET Coaching in Coimbatore" 
+        description="Master your language proficiency tests with Bluestone Language Hub. Expert coaching for IELTS, PTE, and OET with a 99% success rate and global university placements."
+        canonical="/"
+      />
       <Hero />
       <HorizontalScroll />
       <About />

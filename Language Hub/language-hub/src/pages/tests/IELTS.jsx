@@ -3,10 +3,17 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, BookOpen, Clock, Target, Users } from 'lucide-react';
 import { useContactModal } from '../../context/ModalContext';
 
+import SEO from '../../components/SEO';
+
 const IELTS = () => {
     const { openContactModal } = useContactModal();
     return (
         <div className="pt-20 bg-white">
+            <SEO 
+                title="IELTS Coaching in Coimbatore | Best IELTS Training" 
+                description="Join the best IELTS coaching in Coimbatore. Our comprehensive program covers all 4 modules with expert guidance and 50+ mock tests to help you achieve 8+ bands."
+                canonical="/tests/ielts"
+            />
             {/* Hero Section */}
             <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">

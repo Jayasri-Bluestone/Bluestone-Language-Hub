@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import gallery3 from '../assets/gallery2.png';
+import gallery3 from '../assets/IMG_8622.jpg';
 import { GraduationCap, Award, Target, BookOpen } from 'lucide-react';
 
 const About = () => {

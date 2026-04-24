@@ -3,10 +3,17 @@ import { motion } from 'framer-motion';
 import { BookOpen, GraduationCap, Globe, ArrowRight, CheckCircle, BarChart } from 'lucide-react';
 import { useContactModal } from '../../context/ModalContext';
 
+import SEO from '../../components/SEO';
+
 const TOEFL = () => {
   const { openContactModal } = useContactModal();
   return (
     <div className="pt-20 bg-gray-50">
+      <SEO 
+        title="TOEFL iBT Prep | Academic English Training" 
+        description="Ace the TOEFL iBT with Bluestone's academic English training. Master the reading, listening, speaking, and writing modules with official ETS materials."
+        canonical="/tests/toefl"
+      />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-50">

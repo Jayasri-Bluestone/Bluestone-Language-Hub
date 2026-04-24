@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageSquare, RotateCcw } from 'lucide-react';
+import { motion } from 'framer-motion';
+import SEO from './SEO';
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -84,6 +85,11 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-white px-6">
+      <SEO 
+        title="Contact Us | Free Counseling Session" 
+        description="Get in touch with Bluestone Language Hub. Book a free counseling session for IELTS, PTE, OET or study abroad guidance in Coimbatore."
+        canonical="/contact"
+      />
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24">

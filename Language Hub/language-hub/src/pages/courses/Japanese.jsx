@@ -9,8 +9,9 @@ const Japanese = () => {
   return (
     <div className="pt-20 bg-white">
       <SEO 
-        title="Japanese Language Course | Bluestone Language Hub" 
-        description="Learn Japanese from native-level experts. Prepare for JLPT and explore career opportunities in Japan." 
+        title="Japanese Language Course in Coimbatore | JLPT N5 to N1" 
+        description="Learn Japanese from native-level experts. Prepare for JLPT (N5 to N1) and explore technical career opportunities in Japan with Bluestone Language Hub." 
+        canonical="/courses/japanese"
       />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">

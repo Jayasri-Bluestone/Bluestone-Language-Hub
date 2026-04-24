@@ -6,10 +6,17 @@ import { useContactModal } from '../../context/ModalContext';
 // Import Shyam's portrait
 import ShyamPortrait from '../../assets/candidates/shyam.png';
 
+import SEO from '../../components/SEO';
+
 const PTE = () => {
     const { openContactModal } = useContactModal();
     return (
         <div className="pt-20 bg-[#f8f9ff]">
+            <SEO 
+                title="PTE Academic Coaching Coimbatore | Score 79+" 
+                description="Achieve your target PTE score with our AI-powered training. Exclusive templates, real exam interface, and fast-track coaching for PTE Academic in Coimbatore."
+                canonical="/tests/pte"
+            />
             {/* Hero Section */}
             <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">

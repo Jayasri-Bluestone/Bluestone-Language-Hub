@@ -3,10 +3,17 @@ import { motion } from 'framer-motion';
 import { Smartphone, Globe, Sparkles, ArrowRight, Shield, Zap } from 'lucide-react';
 import { useContactModal } from '../../context/ModalContext';
 
+import SEO from '../../components/SEO';
+
 const Duolingo = () => {
   const { openContactModal } = useContactModal();
   return (
     <div className="pt-20 bg-brand-green-soft/30">
+      <SEO 
+        title="Duolingo English Test (DET) Prep | 48-Hour Results" 
+        description="Master the Duolingo English Test with our specialized prep. Get your results in 48 hours and apply to 4,500+ institutions worldwide."
+        canonical="/tests/duolingo"
+      />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">

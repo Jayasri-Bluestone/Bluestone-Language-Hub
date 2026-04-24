@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Sparkles, Trophy, Users, Globe2, MapPin } from 'lucide-react';
-import GlobalImg from '../assets/global.png';
+import GlobalImg from '../assets/IMG_8594.jpg';
 
 const GlobalImpact = () => {
     const highlights = [
@@ -32,12 +32,12 @@ const GlobalImpact = () => {
                             Our Core DNA
                         </motion.span>
                         <motion.div className="max-w-4xl">
-                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 md:mb-10 leading-[0.9] tracking-tighter uppercase">
-                            Redefining <br /> <span className="text-brand-green">Global Education.</span>
-                        </h2>
-                        <p className="text-lg md:text-xl text-gray-400 mb-12 md:mb-16 leading-relaxed font-semibold max-w-xl">
-                            We separate ourselves through a combination of traditional rigor and modern innovation. Our methodology is designed to ensure every student doesn't just pass, but excels.
-                        </p>
+                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 md:mb-10 leading-[0.9] tracking-tighter uppercase">
+                                Redefining <br /> <span className="text-brand-green">Global Education.</span>
+                            </h2>
+                            <p className="text-lg md:text-xl text-gray-400 mb-12 md:mb-16 leading-relaxed font-semibold max-w-xl">
+                                We separate ourselves through a combination of traditional rigor and modern innovation. Our methodology is designed to ensure every student doesn't just pass, but excels.
+                            </p>
                         </motion.div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
@@ -72,10 +72,10 @@ const GlobalImpact = () => {
                         <div className="absolute inset-0 bg-green-gradient rounded-[40px] md:rounded-[80px] blur-3xl opacity-10 transform translate-x-4 translate-y-4" />
                         <div className="relative bg-white p-4 md:p-6 rounded-[48px] md:rounded-[84px] border border-brand-green/10 shadow-[0_40px_100px_-20px_rgba(34,197,94,0.15)] overflow-hidden">
                             <div className="aspect-[4/5] overflow-hidden rounded-[32px] md:rounded-[64px] bg-brand-green relative group">
-                                <img 
-                                    src={GlobalImg} 
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60" 
-                                    alt="Global Impact" 
+                                <img
+                                    src={GlobalImg}
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60"
+                                    alt="Global Impact"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-80" />
 

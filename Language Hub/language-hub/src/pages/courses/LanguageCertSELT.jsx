@@ -14,8 +14,9 @@ const LanguageCertSELT = () => {
   return (
     <div className="pt-20 bg-white">
       <SEO
-        title="Language Cert & SELT (UKVI) | Bluestone Language Hub"
-        description="Global proficiency certifications and UKVI-ready SELT preparation. Professional coaching and recognized credentials for your global career."
+        title="LanguageCert & SELT (UKVI) Prep | Home Office Compliant"
+        description="Global proficiency certifications and UKVI-ready SELT preparation. Get expert coaching for A1, A2, and B1 levels for UK visa compliance with Bluestone Language Hub."
+        canonical="/courses/language-cert-selt"
       />
 
       {/* Hero Section */}

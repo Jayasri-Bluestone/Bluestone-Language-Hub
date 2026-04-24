@@ -1,12 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, Globe } from 'lucide-react';
-import gallery4 from '../../assets/gallery4.png';
+import gallery4 from '../../assets/IMG_8594.jpg';
 
+
+import SEO from '../../components/SEO';
 
 const AboutUsPage = () => {
     return (
         <div className="pt-20 bg-white">
+            <SEO 
+                title="Our Story & Vision" 
+                description="Learn about Bluestone Overseas' legacy since 2015. We are dedicated to providing world-class linguistic training and transparent consulting for global education."
+                canonical="/company/about"
+            />
             {/* Hero Section */}
             <section className="py-16 bg-gray-50 px-6">
                 <div className="container mx-auto">

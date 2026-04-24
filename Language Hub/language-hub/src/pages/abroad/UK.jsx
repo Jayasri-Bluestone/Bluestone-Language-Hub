@@ -41,8 +41,8 @@ const UK = () => {
                 { name: "Law", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" }
             ]}
             whyStudy="The UK offers a prestigious education system, shorter course durations, and a rich cultural heritage, making it an ideal choice for ambitious students."
-            seoTitle="Study in UK | 1-Year Masters & Work Permit | Bluestone Overseas"
-            seoDescription="Launch your career with a world-class UK degree. Get admissions in top Russell Group universities with expert visa guidance from Bluestone Overseas."
+            seoTitle="Study in UK | Russell Group Universities & Post-Study Work"
+            seoDescription="Unlock opportunities in the United Kingdom. Get expert guidance on Russell Group admissions, UK student visas, and graduate routes."
         />
     );
 };

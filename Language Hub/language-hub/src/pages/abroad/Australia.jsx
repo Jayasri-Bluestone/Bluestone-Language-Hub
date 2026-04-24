@@ -40,8 +40,8 @@ const Australia = () => {
                 { name: "Education", image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" }
             ]}
             whyStudy="Australia offers a high standard of living, world-class universities, and a multicultural environment that is highly welcoming to international students."
-            seoTitle="Study in Australia | Go8 Universities & PR Path | Bluestone Overseas"
-            seoDescription="Experience world-class education with a vibrant lifestyle. Bluestone Overseas provides end-to-end support for Australian university admissions and Subclass 500 visa."
+            seoTitle="Study in Australia | PR Pathways & Group of Eight Coaching"
+            seoDescription="Start your journey Down Under. Comprehensive support for Australian university admissions, subclass 500 visas, and PR pathways."
         />
     );
 };

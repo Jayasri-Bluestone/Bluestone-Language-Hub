@@ -6,10 +6,17 @@ import { useContactModal } from '../../context/ModalContext';
 // Import Varun's portrait
 import VarunPortrait from '../../assets/candidates/varun.png';
 
+import SEO from '../../components/SEO';
+
 const OET = () => {
   const { openContactModal } = useContactModal();
   return (
     <div className="pt-20 bg-white">
+      <SEO 
+        title="OET Coaching for Nurses & Doctors | Healthcare Elite" 
+        description="Specialized OET training for healthcare professionals in Coimbatore. Master the Occupational English Test with nursing-specific modules and role-play intensive prep."
+        canonical="/tests/oet"
+      />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
